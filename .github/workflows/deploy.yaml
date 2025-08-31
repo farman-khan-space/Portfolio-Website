@@ -1,56 +1,63 @@
-# Name of the workflow, which will be displayed in the "Actions" tab of your GitHub repository
+# Name of the workflow
 name: Build and Deploy to GitHub Pages
 
-# This action will run automatically on every push to the 'main' branch
+# Controls when the workflow will run
 on:
   push:
-    branches:
-      - main
-  # This also allows you to run the workflow manually from the Actions tab
+    branches: ["main"]
   workflow_dispatch:
-permissions:
-  id-token: write
-  pages: write
-  contents: read
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build_and_deploy"
-  build_and_deploy:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+# =================================================================
+# UPGRADE 1: Add specific permissions for better security
+# =================================================================
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# =================================================================
+# UPGRADE 2: Add concurrency to prevent multiple deployments at once
+# =================================================================
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# A workflow run is made up of one or more jobs
+jobs:
+  deploy:
+    # =================================================================
+    # UPGRADE 3: Define the deployment environment
+    # =================================================================
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    runs-on: ubuntu-latest
     steps:
-      # 1. Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Sets up the specific version of Node.js we want to use
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm' # This will cache our node_modules for faster builds
+          node-version: '20' # Using a modern Node.js version
+          cache: 'npm'
 
-      # 3. Installs the project dependencies using npm ci (which is faster and safer for CI)
       - name: Install dependencies
-        run: npm ci
+        run: npm ci # Using 'ci' is faster and safer for automated environments
 
-      # 4. Runs the build script to generate the static site in the _site folder
-      - name: Build the site with Eleventy
-        run: npx @11ty/eleventy
+      - name: Build the site
+        run: npx @11ty/eleventy # Directly runs the Eleventy build command
 
-      # 5. Prepares the built site to be uploaded to GitHub Pages
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5 # Using the latest version
 
-      # 6. Uploads the build artifact (_site folder)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './_site'
 
-      # 7. Deploys the artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
