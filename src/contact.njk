@@ -1,0 +1,71 @@
+---
+title: Contact
+layout: base.html
+permalink: /contact/
+---
+
+<section class="text-center py-24 lg:py-32 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
+    <div class="container mx-auto">
+        <h1 class="font-heading text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">Get In Touch</h1>
+        <p class="mt-6 max-w-2xl mx-auto text-lg text-neutral-600 dark:text-neutral-400">Have a question, a project idea, or just want to connect? I'd love to hear from you.</p>
+    </div>
+</section>
+
+<section class="bg-white dark:bg-neutral-950 py-20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+
+            <div class="lg:col-span-2">
+                <h2 class="font-heading text-3xl font-bold text-neutral-900 dark:text-white mb-6">Contact Details</h2>
+                <div class="space-y-6">
+                    <a href="mailto:email@example.com" class="flex items-center group">
+                        <i class="bi bi-envelope-fill text-2xl text-primary-600 dark:text-primary-400"></i>
+                        <span class="ml-4 text-lg text-neutral-600 dark:text-neutral-300 group-hover:underline">email@example.com</span>
+                    </a>
+                    <a href="#" class="flex items-center group">
+                        <i class="bi bi-linkedin text-2xl text-primary-600 dark:text-primary-400"></i>
+                        <span class="ml-4 text-lg text-neutral-600 dark:text-neutral-300 group-hover:underline">linkedin.com/in/your-profile</span>
+                    </a>
+                    <a href="#" class="flex items-center group">
+                        <i class="bi bi-github text-2xl text-primary-600 dark:text-primary-400"></i>
+                        <span class="ml-4 text-lg text-neutral-600 dark:text-neutral-300 group-hover:underline">github.com/your-username</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-neutral-50 dark:bg-neutral-900 p-8 rounded-2xl shadow-sm">
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input"></textarea>
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-primary-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-primary-500/20 hover:bg-primary-700 transition-all transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .form-label {
+        @apply block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2;
+    }
+    .form-input {
+        @apply block w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition;
+    }
+</style>

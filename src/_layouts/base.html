@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Farman Khan - Data Analyst</title>
+
+    <script>
+        (function () {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-300 font-sans">
+
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-neutral-50/80 dark:bg-neutral-900/80 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
+        {% include "header.html" %}
+    </header>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 h-screen bg-neutral-50 dark:bg-neutral-900 z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
+        <div class="divide-y divide-neutral-200 dark:divide-neutral-800 w-full max-w-xs">
+            <div class="py-4">
+                <a href="{{ '/' | url }}"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Home</a>
+            </div>
+            <div class="py-4">
+                <a href="{{ '/portfolio/' | url }}"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Portfolio</a>
+            </div>
+            <div class="py-4">
+                <a href="{{ '/blog/' | url }}"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Blog</a>
+            </div>
+            <div class="py-4">
+                <a href="{{ '/about/' | url }}"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">About</a>
+            </div>
+            <div class="py-4">
+                <a href="{{ '/contact/' | url }}"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-20">
+        {{ content | safe }}
+    </main>
+
+    <footer class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+        {% include "footer.html" %}
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle logic
+            const initializeTheme = () => {
+                const btn = document.getElementById('theme-toggle-floating');
+                if (!btn) return;
+                const htmlEl = document.documentElement;
+                btn.addEventListener('click', () => {
+                    htmlEl.classList.toggle('dark');
+                    const theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+                    localStorage.setItem('theme', theme);
+                });
+            };
+
+            // Mobile menu logic
+            const initializeMobileMenu = () => {
+                const toggleBtn = document.getElementById('menu-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const openIcon = document.getElementById('menu-icon-open');
+                const closeIcon = document.getElementById('menu-icon-close');
+
+                if (!toggleBtn || !mobileMenu || !openIcon || !closeIcon) return;
+
+                toggleBtn.addEventListener('click', () => {
+                    const isMenuOpen = mobileMenu.classList.contains('opacity-100');
+
+                    if (isMenuOpen) {
+                        mobileMenu.classList.remove('opacity-100', 'visible');
+                        mobileMenu.classList.add('opacity-0', 'invisible');
+                        document.body.style.overflow = '';
+                        openIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    } else {
+                        mobileMenu.classList.remove('opacity-0', 'invisible');
+                        mobileMenu.classList.add('opacity-100', 'visible');
+                        document.body.style.overflow = 'hidden';
+                        openIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    }
+                });
+            };
+
+            // Scroll to top logic
+            const initializeScrollToTop = () => {
+                const btn = document.getElementById('scroll-to-top');
+                if (!btn) return;
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 500) {
+                        btn.classList.add('opacity-100', 'visible');
+                        btn.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        btn.classList.remove('opacity-100', 'visible');
+                        btn.classList.add('opacity-0', 'invisible');
+                    }
+                });
+                btn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            };
+
+            initializeTheme();
+            initializeMobileMenu();
+            initializeScrollToTop();
+        });
+    </script>
+</body>
+
+</html>

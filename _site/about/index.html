@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Farman Khan - Data Analyst</title>
+
+    <script>
+        (function () {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-300 font-sans">
+
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-neutral-50/80 dark:bg-neutral-900/80 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
+        <div class="container mx-auto px-6">
+    <div class="flex justify-between items-center h-20">
+        <a href="/" aria-label="Farman Khan Home">
+            <div class="flex items-center space-x-4 dark:hidden">
+                <img src="/img/logo-light.svg" alt="Logo" class="h-10 hidden sm:block">
+                <img src="/img/wordmark-light.svg" alt="Farman Khan" class="h-8">
+            </div>
+            <div class="hidden items-center space-x-4 dark:flex dark:drop-shadow-glow">
+                <img src="/img/logo-dark.svg" alt="Logo" class="h-10 hidden sm:block">
+                <img src="/img/wordmark-dark.svg" alt="Farman Khan" class="h-8">
+            </div>
+        </a>
+
+        <nav class="hidden md:flex space-x-2">
+            <a href="/"
+                class="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md font-medium transition-colors">Home</a>
+            <a href="/portfolio/"
+                class="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md font-medium transition-colors">Portfolio</a>
+            <a href="/blog/"
+                class="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md font-medium transition-colors">Blog</a>
+            <a href="/about/"
+                class="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md font-medium transition-colors">About</a>
+            <a href="/contact/"
+                class="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md font-medium transition-colors">Contact</a>
+        </nav>
+        <div class="md:hidden z-50">
+            <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
+                <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+    </header>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 h-screen bg-neutral-50 dark:bg-neutral-900 z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
+        <div class="divide-y divide-neutral-200 dark:divide-neutral-800 w-full max-w-xs">
+            <div class="py-4">
+                <a href="/"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Home</a>
+            </div>
+            <div class="py-4">
+                <a href="/portfolio/"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Portfolio</a>
+            </div>
+            <div class="py-4">
+                <a href="/blog/"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Blog</a>
+            </div>
+            <div class="py-4">
+                <a href="/about/"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">About</a>
+            </div>
+            <div class="py-4">
+                <a href="/contact/"
+                    class="block text-lg font-medium text-neutral-800 dark:text-neutral-200">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-20">
+        
+<section class="text-center py-24 lg:py-32 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
+    <div class="container mx-auto">
+        <h1 class="font-heading text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">About Me</h1>
+        <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary-600 dark:text-primary-400">Data Analyst & Storyteller</p>
+    </div>
+</section>
+
+<section class="bg-white dark:bg-neutral-950 py-20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto items-center">
+            
+            <div class="lg:col-span-1">
+                <img src="https://placehold.co/500x500/27272a/white?text=Farman" alt="Farman Khan" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
+            </div>
+
+            <div class="lg:col-span-2">
+                <h2 class="font-heading text-3xl font-bold text-neutral-900 dark:text-white mb-4">My Mission is to Make Data Speak.</h2>
+                <div class="space-y-4 text-lg text-neutral-600 dark:text-neutral-400">
+                    <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within data. My journey began with a curiosity for patterns and a drive to solve complex problems. Today, I leverage that curiosity to help businesses make smarter, data-informed decisions.</p>
+                    <p>I believe that data, in its raw form, is just noise. My role is to be the translator—to turn that noise into a clear signal, crafting compelling stories and visualizations that are not only insightful but also accessible to any audience.</p>
+                </div>
+
+                <div class="mt-10">
+                    <h3 class="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-4">Core Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">Python (Pandas, NumPy)</span>
+                        <span class="skill-pill">Tableau</span>
+                        <span class="skill-pill">Power BI</span>
+                        <span class="skill-pill">Excel</span>
+                        <span class="skill-pill">Statistical Analysis</span>
+                        <span class="skill-pill">Data Visualization</span>
+                        <span class="skill-pill">ETL Processes</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .skill-pill {
+        @apply inline-block bg-primary-100 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium text-sm py-2 px-4 rounded-full;
+    }
+</style>
+    </main>
+
+    <footer class="bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800">
+        <!-- =================================================================
+FOOTER (RESTYLED WITH FLOATING CONTROLS)
+- Re-adds the theme toggle and scroll-to-top buttons.
+- Styles them using Tailwind utility classes.
+================================================================== -->
+<div class="container mx-auto px-6 py-12 text-center text-neutral-500">
+    <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary-600 dark:hover:text-primary-400 transition-colors"><i class="bi bi-github"></i></a>
+        <a href="#" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary-600 dark:hover:text-primary-400 transition-colors"><i class="bi bi-linkedin"></i></a>
+        <a href="#" target="_blank" aria-label="Email Me" class="text-2xl hover:text-primary-600 dark:hover:text-primary-400 transition-colors"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+    <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
+</div>
+
+<!-- Floating Controls -->
+<div class="fixed bottom-5 right-5 z-50 flex flex-col space-y-3">
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="h-12 w-12 flex items-center justify-center rounded-full bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 shadow-lg hover:scale-110 transition-transform opacity-0 invisible" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle-floating" class="h-12 w-12 flex items-center justify-center rounded-full bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 shadow-lg hover:scale-110 transition-transform" title="Toggle theme">
+        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+</div>
+
+
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle logic
+            const initializeTheme = () => {
+                const btn = document.getElementById('theme-toggle-floating');
+                if (!btn) return;
+                const htmlEl = document.documentElement;
+                btn.addEventListener('click', () => {
+                    htmlEl.classList.toggle('dark');
+                    const theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+                    localStorage.setItem('theme', theme);
+                });
+            };
+
+            // Mobile menu logic
+            const initializeMobileMenu = () => {
+                const toggleBtn = document.getElementById('menu-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const openIcon = document.getElementById('menu-icon-open');
+                const closeIcon = document.getElementById('menu-icon-close');
+
+                if (!toggleBtn || !mobileMenu || !openIcon || !closeIcon) return;
+
+                toggleBtn.addEventListener('click', () => {
+                    const isMenuOpen = mobileMenu.classList.contains('opacity-100');
+
+                    if (isMenuOpen) {
+                        mobileMenu.classList.remove('opacity-100', 'visible');
+                        mobileMenu.classList.add('opacity-0', 'invisible');
+                        document.body.style.overflow = '';
+                        openIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    } else {
+                        mobileMenu.classList.remove('opacity-0', 'invisible');
+                        mobileMenu.classList.add('opacity-100', 'visible');
+                        document.body.style.overflow = 'hidden';
+                        openIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    }
+                });
+            };
+
+            // Scroll to top logic
+            const initializeScrollToTop = () => {
+                const btn = document.getElementById('scroll-to-top');
+                if (!btn) return;
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 500) {
+                        btn.classList.add('opacity-100', 'visible');
+                        btn.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        btn.classList.remove('opacity-100', 'visible');
+                        btn.classList.add('opacity-0', 'invisible');
+                    }
+                });
+                btn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            };
+
+            initializeTheme();
+            initializeMobileMenu();
+            initializeScrollToTop();
+        });
+    </script>
+</body>
+
+</html>

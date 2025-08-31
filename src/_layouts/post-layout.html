@@ -1,0 +1,26 @@
+---
+layout: base.html
+---
+
+<article>
+    <section class="text-center py-20 lg:py-24 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
+        <div class="container mx-auto">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight">{{ title }}</h1>
+            {% if date %}
+            <p class="mt-4 text-lg text-neutral-500 dark:text-neutral-400">{{ date }} • {{ readTime }}</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="bg-white dark:bg-neutral-950 py-16">
+        <div class="container mx-auto px-6">
+            {% if featuredImage %}
+            <img src="{{ featuredImage | url }}" alt="{{ title }}" class="w-full max-w-4xl mx-auto rounded-xl shadow-lg mb-12">
+            {% endif %}
+
+            <div class="prose dark:prose-invert max-w-3xl mx-auto">
+                {{ content | safe }}
+            </div>
+        </div>
+    </section>
+</article>

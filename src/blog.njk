@@ -1,0 +1,37 @@
+---
+title: Blog
+layout: base.html
+permalink: /blog/
+---
+
+<section class="text-center py-24 lg:py-32 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
+    <div class="container mx-auto">
+        <h1 class="font-heading text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">Data & Insights</h1>
+        <p class="mt-6 max-w-2xl mx-auto text-lg text-neutral-600 dark:text-neutral-400">Writing about data analysis, visualization techniques, and the stories hidden within the numbers.</p>
+    </div>
+</section>
+
+<section class="bg-white dark:bg-neutral-950 py-20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          
+  {% for post in collections.posts %}
+            <a href="{{ post.url | url }}" class="block bg-neutral-50 dark:bg-neutral-800/50 p-8 rounded-xl shadow-md border border-neutral-200 dark:border-neutral-800 hover:shadow-xl hover:scale-[1.02] transition-all group flex flex-col">
+                <div class="flex-grow">
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
+                 
+   <h3 class="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ post.data.title }}</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-6">{{ post.data.summary }}</p>
+                </div>
+                <span class="font-medium text-primary-600 dark:text-primary-500 group-hover:underline">Read Article →</span>
+            </a>
+            {% else 
+%}
+                <p class="md:col-span-2 lg:col-span-3 text-center">No posts have been written yet.
+Please check back soon!</p>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
