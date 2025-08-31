@@ -9,7 +9,6 @@ module.exports = function(eleventyConfig) {
   // Create a collection for projects, sorted by date (newest first)
   eleventyConfig.addCollection("projects", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort(function(a, b) {
-      // FIX: Correctly compare dates by creating new Date objects
       return new Date(b.data.date) - new Date(a.data.date);
     });
   });
@@ -17,7 +16,6 @@ module.exports = function(eleventyConfig) {
   // Create a collection for blog posts, sorted by date (newest first)
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort(function(a, b) {
-      // FIX: Correctly compare dates by creating new Date objects
       return new Date(b.data.date) - new Date(a.data.date);
     });
   });
@@ -29,6 +27,11 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
+    // =================================================================
+    // THE FINAL FIX: Add the pathPrefix for GitHub Pages
+    // =================================================================
+    pathPrefix: "/Portfolio-Website/",
+    
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
