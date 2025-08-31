@@ -3,7 +3,8 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  eleventyConfig.addPassthroughCopy("./src/css/style.css");
+  
+  // THE FIX: Removed the incorrect passthrough for style.css
   eleventyConfig.addPassthroughCopy("./src/img"); 
 
   // Create a collection for projects, sorted by date (newest first)
@@ -27,12 +28,9 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    // =================================================================
-    // THE FINAL FIX: Add the pathPrefix for GitHub Pages
-    // =================================================================
     pathPrefix: "/Portfolio-Website/",
-    
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
 };
+

@@ -1,33 +1,21 @@
-# Name of the workflow
 name: Build and Deploy to GitHub Pages
 
-# Controls when the workflow will run
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
 
-# =================================================================
-# UPGRADE 1: Add specific permissions for better security
-# =================================================================
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# =================================================================
-# UPGRADE 2: Add concurrency to prevent multiple deployments at once
-# =================================================================
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# A workflow run is made up of one or more jobs
 jobs:
   deploy:
-    # =================================================================
-    # UPGRADE 3: Define the deployment environment
-    # =================================================================
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -40,17 +28,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Using a modern Node.js version
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci # Using 'ci' is faster and safer for automated environments
+        run: npm ci
 
       - name: Build the site
-        run: npx @11ty/eleventy # Directly runs the Eleventy build command
+        # =================================================================
+        # THE FIX: Changed this line to use the correct build script
+        # =================================================================
+        run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5 # Using the latest version
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
