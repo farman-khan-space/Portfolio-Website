@@ -1,7 +1,7 @@
 // .eleventy.js
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/css/");
+  eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   
   // THE FIX: Removed the incorrect passthrough for style.css
