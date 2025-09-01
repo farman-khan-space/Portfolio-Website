@@ -4,45 +4,35 @@ module.exports = {
   content: ["./src/**/*.{html,njk,md}"],
   theme: {
     extend: {
+      // References the color variables from input.css
       colors: {
-        // ... your colors are correct
-        'primary': {
-          50: '#eef6ff',
-          100: '#d9eaff',
-          200: '#bbdaff',
-          300: '#90c6ff',
-          400: '#60a9ff',
-          500: '#3d8bfd',
-          600: '#2570eb',
-          700: '#1d58d8',
-          800: '#1e49af',
-          900: '#1e3a8a',
-          950: '#172554',
-        },
-        'neutral': {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
-        }
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
+        'foreground-muted': 'rgb(var(--color-foreground-muted) / <alpha-value>)',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
       },
+      // References the border-radius variables from input.css
+      borderRadius: {
+        DEFAULT: 'var(--radius-default)',
+        lg: 'var(--radius-lg)',
+      },
+      // References the font variables from input.css
       fontFamily: {
-        'heading': ['Poppins', 'sans-serif'],
-        'sans': ['Inter', 'sans-serif'],
+        heading: 'var(--font-heading)',
+        sans: 'var(--font-body)',
       },
-      // THIS IS THE NEW ADDITION
+      // References the animation variables from input.css
+      transitionDuration: {
+        'theme': 'var(--transition-speed)',
+      },
+      // Kept your custom drop shadow
       dropShadow: {
         'glow': '0 0 6px rgba(255, 255, 255, 0.4)',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'), // This line has been added
+  ],
 }
-

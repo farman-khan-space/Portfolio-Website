@@ -1,87 +1,98 @@
 ---
 title: Home
-layout: base.html
+layout: base.njk
 permalink: /
 ---
 
-<section
-    class="text-center py-24 lg:py-40 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
-    <div class="container mx-auto">
-        <h1 class="font-heading text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">Farman
-            Khan</h1>
-        <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary-600 dark:text-primary-400">Data Analyst
-            & Storyteller</p>
-        <p class="mt-6 max-w-2xl mx-auto text-lg text-neutral-600 dark:text-neutral-400">Transforming complex data into
-            actionable insights and compelling narratives.</p>
-        <div class="mt-10">
-            <a href="{{ '/portfolio/' | url }}"
-                class="inline-block bg-primary-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-primary-500/20 hover:bg-primary-700 transition-all transform hover:scale-105">
-                View My Work
-            </a>
-        </div>
-    </div>
+<section class="text-center py-24 lg:py-40 px-6 bg-accent">
+<div class="container mx-auto">
+<h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Farman Khan</h1>
+<p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
+<p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Transforming complex data into actionable insights and compelling narratives.</p>
+<div class="mt-10">
+<a href="{{ '/portfolio/' | url }}" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme">
+View My Work
+</a>
+</div>
+</div>
 </section>
 
-<section class="bg-white dark:bg-neutral-950 py-20">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="font-heading text-3xl font-bold text-neutral-900 dark:text-white">Recent Projects</h2>
-            <p class="mt-2 text-lg text-neutral-500 dark:text-neutral-400">A selection of my latest data-driven work.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            {% for project in collections.projects %}
-              {% if loop.index0 < 3 %}
-                <a href="{{ project.url | url }}" class="block bg-neutral-50 dark:bg-neutral-800/50 p-2 rounded-xl shadow-md border border-neutral-200 dark:border-neutral-800 hover:shadow-xl hover:scale-[1.02] transition-all group flex flex-col">
-                    <div class="overflow-hidden rounded-lg">
-                        <img src="{{ project.data.featuredImage | url }}" alt="{{ project.data.title }}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-2">{{ project.data.title }}</h3>
-                        <p class="text-neutral-600 dark:text-neutral-400 mb-4">{{ project.data.summary }}</p>
-                    </div>
-                    <div class="p-6 pt-0">
-                      <span class="font-medium text-primary-600 dark:text-primary-500 group-hover:underline">View Project →</span>
-                    </div>
-                </a>
-              {% endif %}
-            {% endfor %}
-            
-        </div>
-        <div class="text-center mt-16">
-            <a href="{{ '/portfolio/' | url }}" class="inline-block text-primary-600 dark:text-primary-400 font-medium py-3 px-8 rounded-lg border-2 border-primary-500/50 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 transition-colors">
-               View All Projects
+<!-- =================================================================== -->
+
+<!-- RECENT PROJECTS SECTION
+<!-- =================================================================== -->
+
+<section class="bg-background py-20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="font-heading text-3xl font-bold text-foreground">Recent Projects</h2>
+<p class="mt-2 text-lg text-foreground-muted">A selection of my latest data-driven work.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        {% for project in collections.projects %}
+          {% if loop.index0 < 3 %}
+            <!-- THEME-AWARE PROJECT CARD -->
+            <a href="{{ project.url | url }}" class="group block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-all duration-theme flex flex-col">
+                <div class="overflow-hidden rounded">
+                    <img src="{{ project.data.featuredImage | url }}" alt="{{ project.data.title }}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-theme">
+                </div>
+                <div class="p-6 flex-grow">
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-2">{{ project.data.title }}</h3>
+                    <p class="text-foreground-muted mb-4">{{ project.data.summary }}</p>
+                </div>
+                <div class="p-6 pt-0">
+                  <span class="font-medium text-primary group-hover:underline">View Project →</span>
+                </div>
             </a>
-        </div>
+          {% endif %}
+        {% endfor %}
+        
     </div>
+    <div class="text-center mt-16">
+        <!-- SECONDARY BUTTON STYLE -->
+        <a href="{{ '/portfolio/' | url }}" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
+           View All Projects
+        </a>
+    </div>
+</div>
+
 </section>
 
-<section class="bg-neutral-50 dark:bg-neutral-900 py-20">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="font-heading text-3xl font-bold text-neutral-900 dark:text-white">Latest from the Blog</h2>
-            <p class="mt-2 text-lg text-neutral-500 dark:text-neutral-400">My recent thoughts on data, analytics, and storytelling.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            {% for post in collections.posts %}
-              {% if loop.index0 < 3 %}
-                <a href="{{ post.url | url }}" class="block bg-white dark:bg-neutral-800/50 p-8 rounded-xl shadow-md border border-neutral-200 dark:border-neutral-700 hover:shadow-xl hover:scale-[1.02] transition-all group flex flex-col">
-                    <div class="flex-grow">
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
-                        <h3 class="font-heading text-xl font-bold text-neutral-900 dark:text-white mb-3">{{ post.data.title }}</h3>
-                        <p class="text-neutral-600 dark:text-neutral-400 mb-6">{{ post.data.summary }}</p>
-                    </div>
-                    <span class="font-medium text-primary-600 dark:text-primary-500 group-hover:underline">Read Article →</span>
-                </a>
-              {% endif %}
-            {% endfor %}
+<!-- =================================================================== -->
 
-        </div>
-        <div class="text-center mt-16">
-            <a href="{{ '/blog/' | url }}" class="inline-block text-primary-600 dark:text-primary-400 font-medium py-3 px-8 rounded-lg border-2 border-primary-500/50 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 transition-colors">
-               View All Posts
+<!-- LATEST BLOG POSTS SECTION
+<!-- =================================================================== -->
+
+<section class="bg-background py-20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="font-heading text-3xl font-bold text-foreground">Latest from the Blog</h2>
+<p class="mt-2 text-lg text-foreground-muted">My recent thoughts on data, analytics, and storytelling.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        {% for post in collections.posts %}
+          {% if loop.index0 < 3 %}
+            <!-- THEME-AWARE BLOG POST CARD -->
+            <a href="{{ post.url | url }}" class="group block bg-background p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-all duration-theme flex flex-col">
+                <div class="flex-grow">
+                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
+                    <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
+                </div>
+                <span class="font-medium text-primary group-hover:underline">Read Article →</span>
             </a>
-        </div>
+          {% endif %}
+        {% endfor %}
+
     </div>
+    <div class="text-center mt-16">
+        <!-- SECONDARY BUTTON STYLE -->
+        <a href="{{ '/blog/' | url }}" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
+           View All Posts
+        </a>
+    </div>
+</div>
+
 </section>

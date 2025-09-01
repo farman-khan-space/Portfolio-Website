@@ -1,24 +1,25 @@
 // .eleventy.js
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  
-  // THE FIX: Removed the incorrect passthrough for style.css
-  eleventyConfig.addPassthroughCopy("./src/img"); 
+  // This line is new! It copies the compiled CSS to the output folder.
+  eleventyConfig.addPassthroughCopy("./src/css/style.css");
 
-  // Create a collection for projects, sorted by date (newest first)
+  // Watch for changes in your CSS folder for live-reloading
+  eleventyConfig.addWatchTarget("./src/css/");
+
+  // Copy assets like images
+  eleventyConfig.addPassthroughCopy("./src/img"); 
+  
+  // ... the rest of your config remains the same
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   eleventyConfig.addCollection("projects", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort(function(a, b) {
-      return new Date(b.data.date) - new Date(a.data.date);
-    });
+    return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
-  // Create a collection for blog posts, sorted by date (newest first)
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort(function(a, b) {
-      return new Date(b.data.date) - new Date(a.data.date);
-    });
+    return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
   return {
@@ -28,9 +29,9 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    pathPrefix: "/Portfolio-Website/",
+    // Conditionally sets the pathPrefix
+    pathPrefix: isProduction ? "/Portfolio-Website/" : "/",
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
 };
-

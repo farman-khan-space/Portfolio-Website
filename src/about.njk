@@ -1,33 +1,33 @@
 ---
 title: About Me
-layout: base.html
+layout: base.njk
 permalink: /about/
 ---
 
-<section class="text-center py-24 lg:py-32 px-6 bg-gradient-to-b from-primary-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-950">
+<section class="text-center py-24 lg:py-32 px-6 bg-accent">
     <div class="container mx-auto">
-        <h1 class="font-heading text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">About Me</h1>
-        <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary-600 dark:text-primary-400">Data Analyst & Storyteller</p>
+        <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">About Me</h1>
+        <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
     </div>
 </section>
 
-<section class="bg-white dark:bg-neutral-950 py-20">
+<section class="bg-background py-20">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto items-center">
             
-            <div class="lg:col-span-1">
+             <div class="lg:col-span-1">
                 <img src="https://placehold.co/500x500/27272a/white?text=Farman" alt="Farman Khan" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
             </div>
 
             <div class="lg:col-span-2">
-                <h2 class="font-heading text-3xl font-bold text-neutral-900 dark:text-white mb-4">My Mission is to Make Data Speak.</h2>
-                <div class="space-y-4 text-lg text-neutral-600 dark:text-neutral-400">
+                <h2 class="font-heading text-3xl font-bold text-foreground mb-4">My Mission is to Make Data Speak.</h2>
+                <div class="space-y-4 text-lg text-foreground-muted">
                     <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within data. My journey began with a curiosity for patterns and a drive to solve complex problems. Today, I leverage that curiosity to help businesses make smarter, data-informed decisions.</p>
                     <p>I believe that data, in its raw form, is just noise. My role is to be the translator—to turn that noise into a clear signal, crafting compelling stories and visualizations that are not only insightful but also accessible to any audience.</p>
                 </div>
 
                 <div class="mt-10">
-                    <h3 class="font-heading text-2xl font-bold text-neutral-900 dark:text-white mb-4">Core Skills</h3>
+                    <h3 class="font-heading text-2xl font-bold text-foreground mb-4">Core Skills</h3>
                     <div class="flex flex-wrap gap-3">
                         <span class="skill-pill">SQL</span>
                         <span class="skill-pill">Python (Pandas, NumPy)</span>
@@ -47,6 +47,6 @@ permalink: /about/
 
 <style>
     .skill-pill {
-        @apply inline-block bg-primary-100 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium text-sm py-2 px-4 rounded-full;
+        @apply inline-block bg-accent text-primary font-medium text-sm py-2 px-4 rounded-full;
     }
 </style>

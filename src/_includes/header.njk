@@ -1,0 +1,35 @@
+<header class="fixed top-0 left-0 w-full z-50 bg-background/[.96] backdrop-blur-10xl border-b border-accent/50">
+    <div class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+            <a href="/" aria-label="Farman Khan Home">
+                <div class="flex items-center space-x-4 dark:hidden">
+                    <img src="{{ '/img/logo-light.svg' | url }}" alt="Logo" class="h-10 hidden sm:block">
+                    <img src="{{ '/img/wordmark-light.svg' | url }}" alt="Farman Khan" class="h-8">
+                </div>
+                <div class="hidden items-center space-x-4 dark:flex dark:drop-shadow-glow">
+                    <img src="{{ '/img/logo-dark.svg' | url }}" alt="Logo" class="h-10 hidden sm:block">
+                    <img src="{{ '/img/wordmark-dark.svg' | url }}" alt="Farman Khan" class="h-8">
+                </div>
+            </a>
+    
+            <nav class="hidden md:flex space-x-2">
+                <a href="{{ '/' | url }}" class="nav-link px-4 py-2">Home</a>
+                <a href="{{ '/portfolio/' | url }}" class="nav-link px-4 py-2">Portfolio</a>
+                <a href="{{ '/blog/' | url }}" class="nav-link px-4 py-2">Blog</a>
+                <a href="{{ '/about/' | url }}" class="nav-link px-4 py-2">About</a>
+                <a href="{{ '/contact/' | url }}" class="nav-link px-4 py-2">Contact</a>
+            </nav>
+    
+            <div class="md:hidden z-50">
+                <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
+                    <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
