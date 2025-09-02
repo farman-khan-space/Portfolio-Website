@@ -781,7 +781,7 @@ video {
 
 [data-theme='kyoto-ink'] {
   /* Colors */
-  --color-background: 247 247 F247;
+  --color-background: 247 247 247;
   --color-foreground: 12 10 9;
   --color-foreground-muted: 87 83 78;
   --color-primary: 185 28 28;
@@ -1235,8 +1235,8 @@ video {
   background-color: rgb(var(--color-background) / 0.8);
 }
 
-.bg-background\/\[\.96\] {
-  background-color: rgb(var(--color-background) / .96);
+.bg-background\/\[\.97\] {
+  background-color: rgb(var(--color-background) / .97);
 }
 
 .bg-foreground {

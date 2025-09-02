@@ -1,7 +1,7 @@
 ---
 title: Market Trend Analysis
 summary: Analyzed sales data to identify key market trends and provide actionable growth strategies.
-featuredImage: /img/projects/project-one.jpg
+featuredImage: /img/projects/project-one.png
 layout:  base.njk
 date: 2025-08-30
 tags: ["SQL", "Python", "Power BI"]

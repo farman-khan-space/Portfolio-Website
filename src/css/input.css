@@ -224,7 +224,7 @@
   /* --- Theme 7: "Kyoto Ink" (Sharp & Minimalist) --- */
   [data-theme='kyoto-ink'] {
     /* Colors */
-    --color-background: 247 247 F247;
+    --color-background: 247 247 247;
     --color-foreground: 12 10 9;
     --color-foreground-muted: 87 83 78;
     --color-primary: 185 28 28;
