@@ -7,7 +7,8 @@ permalink: /blog/
 <section class="text-center py-24 lg:py-32 px-6 bg-accent">
     <div class="container mx-auto">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Data & Insights</h1>
-        <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Writing about data analysis, visualization techniques, and the stories hidden within the numbers.</p>
+        <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Writing about data analysis, visualization
+            techniques, and the stories hidden within the numbers.</p>
     </div>
 </section>
 
@@ -15,21 +16,28 @@ permalink: /blog/
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-          {% for post in collections.posts %}
-            <div class="block bg-accent p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-                <div class="flex-grow">
-                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
-                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3> 
+            {% for post in collections.posts %}
+            <div
+                class="block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+                <div class="overflow-hidden rounded">
+                    {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px)
+                    50vw, 100vw", "w-full h-52 object-cover" %}
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date | readableDate }} • {{
+                        post.data.readTime }}</p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
                     <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
                 </div>
-                <a href="{{ post.url | url }}" class="font-medium text-primary hover:font-bold hover:underline">
+                <a href="{{ post.url | url }}"
+                    class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
                     Read Article
                 </a>
             </div>
-          {% else %}
-            <p class="md:col-span-2 lg:col-span-3 text-center text-foreground-muted">No posts have been written yet. 
-            Please check back soon!</p> 
-          {% endfor %}
+            {% else %}
+            <p class="md:col-span-2 lg:col-span-3 text-center text-foreground-muted">No posts have been written yet.
+                Please check back soon!</p>
+            {% endfor %}
 
         </div>
     </div>

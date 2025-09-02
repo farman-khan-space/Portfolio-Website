@@ -33,6 +33,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/aspect-ratio'), // This line has been added
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'), // <-- This is the new line
   ],
 }

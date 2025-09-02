@@ -22,8 +22,16 @@
     
             <nav class="hidden md:flex space-x-2">
               {%- for item in navigation -%}
-                {# This is the updated, more specific condition #}
-                {% set isActive = (item.url == '/' and page.url == '/') or (item.url != '/' and page.url.startsWith(item.url)) %}
+                {# This new logic correctly identifies the active section #}
+                {% set isActive = false %}
+                {% if item.url == page.url %}
+                    {% set isActive = true %}
+                {% elseif item.url == '/blog/' and page.filePathStem.startsWith('/posts/') %}
+                    {% set isActive = true %}
+                {% elseif item.url == '/portfolio/' and page.filePathStem.startsWith('/projects/') %}
+                    {% set isActive = true %}
+                {% endif %}
+
                 <a href="{{ item.url | url }}" 
                    class="nav-link px-4 py-2 {% if isActive %}text-primary font-bold{% endif %}">
                   {{ item.text }}
@@ -33,7 +41,7 @@
     
             <div class="md:hidden z-50">
                 <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
-                    <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                     <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

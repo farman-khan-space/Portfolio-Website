@@ -1,19 +1,55 @@
-// .eleventy.js
+const { DateTime } = require("luxon");
+const Image = require("@11ty/eleventy-img");
+const path = require("path");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
+  let srcPath = src.startsWith('/') ? `./src${src}` : src;
+
+  let metadata = await Image(srcPath, {
+    widths: [400, 800, 1200],
+    formats: ["webp", "jpeg"],
+    outputDir: "./_site/img/optimized/",
+    urlPath: "/img/optimized/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+      return `${name}-${width}w.${format}`;
+    }
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    class: classes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = function(eleventyConfig) {
-  // This line is new! It copies the compiled CSS to the output folder.
+  // --- PLUGINS ---
+  eleventyConfig.addPlugin(syntaxHighlight, {
+  showCopyButton: true,
+});
+
+  // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
-
-  // Watch for changes in your CSS folder for live-reloading
   eleventyConfig.addWatchTarget("./src/css/");
-
-  // Copy assets like images
   eleventyConfig.addPassthroughCopy("./src/img"); 
   
-  // ... the rest of your config remains the same
+  // --- FILTERS & SHORTCODES ---
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL d, yyyy");
+  });
 
+  // --- COLLECTIONS ---
   eleventyConfig.addCollection("projects", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
@@ -22,6 +58,7 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
+  // --- BASE CONFIG ---
   return {
     dir: {
       input: "src",
@@ -29,7 +66,6 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    // Conditionally sets the pathPrefix
     pathPrefix: isProduction ? "/Portfolio-Website/" : "/",
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"

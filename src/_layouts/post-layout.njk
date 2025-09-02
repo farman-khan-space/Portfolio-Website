@@ -4,22 +4,18 @@ layout: base.njk
 
 <article>
     <section class="text-center py-20 lg:py-24 px-6 bg-accent">
-        <div class="container mx-auto"> [cite: 24]
+        <div class="container mx-auto">
             <h1 class="font-heading text-4xl md:text-5xl font-bold text-foreground tracking-tight">{{ title }}</h1>
             {% if date %}
-            <p class="mt-4 text-lg text-foreground-muted">{{ date }} • {{ readTime }}</p>
+            <p class="mt-4 text-lg text-foreground-muted">{{ date | readableDate }}  {{ readTime }}</p>
             {% endif %}
-        </div> [cite: 24]
+        </div>
     </section>
 
     <section class="bg-background py-16">
         <div class="container mx-auto px-6">
-            {% if featuredImage %}
-            <img src="{{ featuredImage | url }}" alt="{{ title }}" class="w-full max-w-4xl mx-auto rounded-xl shadow-lg mb-12">
-            {% endif %}
-
             <div class="prose dark:prose-invert max-w-3xl mx-auto">
-                {{ content | safe }} [cite: 25, 26]
+                {{ content | safe }}
             </div>
         </div>
     </section>

@@ -16,10 +16,11 @@ permalink: /portfolio/
             {# This loop will display ALL projects from your `src/projects` folder #}
             {% for project in collections.projects %}
 
-            <div class="block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+            <div
+                class="block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
-                    <img src="{{ project.data.featuredImage | url }}" alt="{{ project.data.title }}"
-                        class="w-full h-52 object-cover">
+                    {% image project.data.featuredImage, project.data.title, "(min-width: 1024px) 30vw, (min-width:
+                    768px) 50vw, 100vw", "w-full h-52 object-cover" %}
                 </div>
                 <div class="p-6 flex-grow">
                     <h3 class="font-heading text-xl font-bold text-foreground mb-2">{{ project.data.title }}</h3>
