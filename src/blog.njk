@@ -16,16 +16,19 @@ permalink: /blog/
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
           {% for post in collections.posts %}
-            <a href="{{ post.url | url }}" class="group block bg-accent p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-all duration-theme flex flex-col">
+            <div class="block bg-accent p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="flex-grow">
                     <p class="text-sm text-foreground-muted mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
-                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3> 
                     <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
                 </div>
-                <span class="font-medium text-primary group-hover:underline">Read Article →</span>
-            </a>
+                <a href="{{ post.url | url }}" class="font-medium text-primary hover:font-bold hover:underline">
+                    Read Article
+                </a>
+            </div>
           {% else %}
-                <p class="md:col-span-2 lg:col-span-3 text-center text-foreground-muted">No posts have been written yet. Please check back soon!</p>
+            <p class="md:col-span-2 lg:col-span-3 text-center text-foreground-muted">No posts have been written yet. 
+            Please check back soon!</p> 
           {% endfor %}
 
         </div>

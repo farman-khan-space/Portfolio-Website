@@ -17,11 +17,6 @@ View My Work
 </div>
 </section>
 
-<!-- =================================================================== -->
-
-<!-- RECENT PROJECTS SECTION
-<!-- =================================================================== -->
-
 <section class="bg-background py-20">
 <div class="container mx-auto px-6">
 <div class="text-center mb-12">
@@ -30,27 +25,27 @@ View My Work
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-        {% for project in collections.projects %}
+        {% for project in collections.projects %} 
           {% if loop.index0 < 3 %}
-            <!-- THEME-AWARE PROJECT CARD -->
-            <a href="{{ project.url | url }}" class="group block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-all duration-theme flex flex-col">
+            <div class="block bg-accent  p-2 rounded-lg shadow-lg border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
-                    <img src="{{ project.data.featuredImage | url }}" alt="{{ project.data.title }}" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-theme">
+                    <img src="{{ project.data.featuredImage | url }}" alt="{{ project.data.title }}" class="w-full h-52 object-cover"> 
                 </div>
                 <div class="p-6 flex-grow">
                     <h3 class="font-heading text-xl font-bold text-foreground mb-2">{{ project.data.title }}</h3>
-                    <p class="text-foreground-muted mb-4">{{ project.data.summary }}</p>
+                    <p class="text-foreground-muted mb-4">{{ project.data.summary }}</p> 
                 </div>
                 <div class="p-6 pt-0">
-                  <span class="font-medium text-primary group-hover:underline">View Project →</span>
+                    <a href="{{ project.url | url }}" class="font-medium text-primary hover:font-bold hover:underline">
+                        Project Details
+                    </a>
                 </div>
-            </a>
+            </div>
           {% endif %}
-        {% endfor %}
+        {% endfor %} 
         
     </div>
     <div class="text-center mt-16">
-        <!-- SECONDARY BUTTON STYLE -->
         <a href="{{ '/portfolio/' | url }}" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
            View All Projects
         </a>
@@ -58,11 +53,6 @@ View My Work
 </div>
 
 </section>
-
-<!-- =================================================================== -->
-
-<!-- LATEST BLOG POSTS SECTION
-<!-- =================================================================== -->
 
 <section class="bg-background py-20">
 <div class="container mx-auto px-6">
@@ -73,22 +63,23 @@ View My Work
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
         {% for post in collections.posts %}
-          {% if loop.index0 < 3 %}
-            <!-- THEME-AWARE BLOG POST CARD -->
-            <a href="{{ post.url | url }}" class="group block bg-background p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-all duration-theme flex flex-col">
+          {% if loop.index0 < 3 %} 
+            <div class="block bg-accent p-8 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="flex-grow">
                     <p class="text-sm text-foreground-muted mb-2">{{ post.data.date }} • {{ post.data.readTime }}</p>
                     <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
-                    <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
+                    <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p> 
                 </div>
-                <span class="font-medium text-primary group-hover:underline">Read Article →</span>
-            </a>
+                <a href="{{ post.url | url }}" class="font-medium text-primary hover:font-bold hover:underline">
+                    Read Article
+                </a>
+            </div>
           {% endif %}
         {% endfor %}
 
     </div>
     <div class="text-center mt-16">
-        <!-- SECONDARY BUTTON STYLE -->
+       
         <a href="{{ '/blog/' | url }}" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
            View All Posts
         </a>
