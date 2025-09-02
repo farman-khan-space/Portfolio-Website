@@ -3,6 +3,10 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+// Define the path prefix in one place
+const isProduction = process.env.NODE_ENV === 'production';
+const PATH_PREFIX = isProduction ? "/Portfolio-Website/" : "/";
+
 async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
   let srcPath = src.startsWith('/') ? `./src${src}` : src;
 
@@ -10,7 +14,8 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
     widths: [400, 800, 1200],
     formats: ["webp", "jpeg"],
     outputDir: "./_site/img/optimized/",
-    urlPath: "/img/optimized/",
+    // Use the path prefix to create the correct URL path
+    urlPath: path.join(PATH_PREFIX, "/img/optimized/"),
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
       const name = path.basename(src, extension);
@@ -29,13 +34,11 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 module.exports = function(eleventyConfig) {
   // --- PLUGINS ---
   eleventyConfig.addPlugin(syntaxHighlight, {
-  showCopyButton: true,
-});
+    showCopyButton: true,
+  });
 
   // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
@@ -66,7 +69,8 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    pathPrefix: isProduction ? "/Portfolio-Website/" : "/",
+    // Use the path prefix constant
+    pathPrefix: PATH_PREFIX,
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
