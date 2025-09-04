@@ -33,13 +33,14 @@
                 {% endif %}
 
                 <a href="{{ item.url | url }}" 
-                   class="nav-link px-4 py-2 {% if isActive %}text-primary font-bold{% endif %}">
+                   class="nav-link px-4 py-2 {% if isActive %}text-primary font-bold{% endif %}"
+                   {% if isActive %}aria-current="page"{% endif %}> {# <-- I ADDED THIS LINE #}
                   {{ item.text }}
                 </a>
               {%- endfor -%}
             </nav>
     
-            <div class="md:hidden z-50">
+           <div class="md:hidden z-50">
                 <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
                     <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />

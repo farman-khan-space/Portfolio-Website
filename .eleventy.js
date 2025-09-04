@@ -44,7 +44,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/img"); 
-  
+  eleventyConfig.addPassthroughCopy("./src/img/favicons"); // <-- I ADDED THIS LINE
+
   // --- FILTERS & SHORTCODES ---
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
