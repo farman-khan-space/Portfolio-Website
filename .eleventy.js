@@ -5,7 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Define the path prefix in one place
 const isProduction = process.env.NODE_ENV === 'production';
-const PATH_PREFIX = isProduction ? "/Portfolio-Website/" : "/";
+const PATH_PREFIX = "/";
 
 async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
   let srcPath = src.startsWith('/') ? `./src${src}` : src;
