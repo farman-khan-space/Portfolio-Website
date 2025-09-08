@@ -33,18 +33,3 @@ permalink: /thank-you/
 </div>
 
 </section>
-
-
-#### Step 2: Update Your Contact Form HTML
-
-Now, we just need to add one small piece of information to your contact form to tell it where to go after submission.
-
-1.  Open your `src/contact.njk` file.
-2.  Find the opening `<form>` tag. It currently looks like this:
-    ```html
-    <form name="contact" method="POST" netlify>
-    ```
-3.  Add an `action` attribute to it that points to your new "Thank You" page, like this:
-    ```html
-    <form name="contact" method="POST" action="/thank-you/" netlify>
-    ```
