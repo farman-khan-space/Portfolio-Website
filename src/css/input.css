@@ -3,197 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* =================================================================== */
-  /* THEME DEFINITIONS
-  /* =================================================================== */
-
-  /* --- Theme 1: "Slate & Sky" (Modern & Dark-focused) --- */
-  [data-theme='slate-sky'] {
-    /* Colors */
-    --color-background: 248 250 252;
-    --color-foreground: 15 23 42;
-    --color-foreground-muted: 100 116 139;
-    --color-primary: 59 130 246;
-    --color-accent: 255 255 255;
-    /* Shapes */
-    --radius-default: 0.75rem;
-    --radius-lg: 1rem;
-    /* Fonts */
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    /* Animations */
-    --transition-speed: 150ms;
-  }
-
-  [data-theme='slate-sky'].dark {
-    --color-background: 15 23 42;
-    --color-foreground: 226 232 240;
-    --color-foreground-muted: 100 116 139;
-    --color-primary: 59 130 246;
-    --color-accent: 30 41 59;
-  }
-
-  /* --- Theme 2: "Pro Blue" (Clean & Corporate) --- */
-  [data-theme='pro-blue'] {
-    /* Colors */
-    --color-background: 255 255 255;
-    --color-foreground: 30 41 59;
-    --color-foreground-muted: 71 85 105;
-    --color-primary: 37 99 235;
-    --color-accent: 241 245 249;
-    /* Shapes */
-    --radius-default: 0.375rem;
-    --radius-lg: 0.5rem;
-    /* Fonts */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    /* Animations */
-    --transition-speed: 300ms;
-  }
   
-  [data-theme='pro-blue'].dark {
-    --color-background: 2 6 23;
-    --color-foreground: 203 213 225;
-    --color-foreground-muted: 100 116 139;
-    --color-primary: 37 99 235;
-    --color-accent: 15 23 42;
-  }
-
-
-  /* --- Theme 3: "Forest & Amber" (Earthy & Warm) --- */
-  [data-theme='forest-amber'] {
-    /* Colors */
-    --color-background: 248 247 243;
-    --color-foreground: 34 44 37;
-    --color-foreground-muted: 82 93 85;
-    --color-primary: 217 119 6;
-    --color-accent: 236 241 237;
-    /* Shapes */
-    --radius-default: 0.5rem;
-    --radius-lg: 0.75rem;
-    /* Fonts */
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    /* Animations */
-    --transition-speed: 200ms;
-  }
-
-  [data-theme='forest-amber'].dark {
-    --color-background: 20 29 22;
-    --color-foreground: 230 228 222;
-    --color-foreground-muted: 113 121 115;
-    --color-primary: 251 191 36;
-    --color-accent: 29 39 32;
-  }
-
-
-
-  /* --- Theme 4: "Solarized Neon" (High-contrast & Techy) --- */
-  [data-theme='solarized-neon'] {
-    /* Colors */
-    --color-background: 248 250 252;
-    --color-foreground: 17 24 39;
-    --color-foreground-muted: 107 114 128;
-    --color-primary: 6 182 212;
-    --color-accent: 243 244 246;
-    /* Shapes */
-    --radius-default: 0.25rem;
-    --radius-lg: 0.5rem;
-    /* Fonts */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Lato', sans-serif;
-    /* Animations */
-    --transition-speed: 150ms;
-  }
-
-  [data-theme='solarized-neon'].dark {
-    --color-background: 1 22 39;
-    --color-foreground: 229 231 235;
-    --color-foreground-muted: 107 114 128;
-    --color-primary: 236 72 153;
-    --color-accent: 17 33 48;
-  }
-
-  /* --- Theme 5: "Graphite & Gold" (Elegant & Subtle) --- */
-  [data-theme='graphite-gold'] {
-    /* Colors */
-    --color-background: 249 250 251;
-    --color-foreground: 28 28 28;
-    --color-foreground-muted: 82 82 82;
-    --color-primary: 180 138 65;
-    --color-accent: 243 244 246;
-    /* Shapes */
-    --radius-default: 0.5rem;
-    --radius-lg: 0.75rem;
-    /* Fonts */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    /* Animations */
-    --transition-speed: 200ms;
-  }
-
-  [data-theme='graphite-gold'].dark {
-    --color-background: 20 20 20;
-    --color-foreground: 221 221 221;
-    --color-foreground-muted: 136 136 136;
-    --color-primary: 212 175 55;
-    --color-accent: 34 34 34;
-  }
-
-
-  /* --- Theme 6: "Oceanic Slate" (Modern & Cool) --- */
-  /* --- Theme 6: "Oceanic Slate" (Modern & Cool) --- */
-  [data-theme='oceanic-slate'] {
-    /* Colors */
-    --color-background: 255 255 255;
-    --color-foreground: 41 53 73;
-    --color-foreground-muted: 100 116 139;
-    --color-primary: 20 184 166;
-    --color-accent: 241 245 249;
-    /* Shapes */
-    --radius-default: 0.375rem;
-    --radius-lg: 0.5rem;
-    /* Fonts */
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Lato', sans-serif;
-    /* Animations */
-    --transition-speed: 150ms;
-  }
-  
-  [data-theme='oceanic-slate'].dark {
-    --color-background: 14 26 45;
-    --color-foreground: 203 213 225;
-    --color-foreground-muted: 100 116 139;
-    --color-primary: 45 212 191;
-    --color-accent: 25 39 58;
-  }
-
-
-  /* --- Theme 9: "Nordic" (Soft & Clean) --- */
-  [data-theme='nordic'] {
-    /* Colors */
-    --color-background: 255 255 255;
-    --color-foreground: 31 41 55;
-    --color-foreground-muted: 107 114 128;
-    --color-primary: 5 150 105;
-    --color-accent: 249 250 251;
-    /* Shapes */
-    --radius-default: 1rem;
-    --radius-lg: 1.5rem;
-    /* Fonts */
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    /* Animations */
-    --transition-speed: 200ms;
-  }
-
-  [data-theme='nordic'].dark {
-    --color-background: 17 24 39;
-    --color-foreground: 229 231 235;
-    --color-foreground-muted: 156 163 175;
-    --color-primary: 16 185 129;
-    --color-accent: 31 41 55;
-  }
 
   /* --- Theme 8: "Cambridge" (Classic & Academic) --- */
   [data-theme='cambridge'] {
@@ -283,7 +93,113 @@
   div[class*="language-"]:hover .eleventy-plugin-syntaxhighlight-copy-button {
     opacity: 1;
   }
+
+.card-glass {
+    @apply relative isolate overflow-hidden;
+  }
+
+  .card-glass::before {
+    content: '';
+    @apply absolute inset-0 z-[-1];
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    
+    /* --- LIGHT MODE GRADIENT --- */
+    background-image: radial-gradient(circle, #F5F5F4, #F7F7F7, #f7f6f6); 
+  }
+
+  .dark .card-glass::before {
+    /* --- DARK MODE GRADIENT --- */
+    background-image: radial-gradient(circle, #212328, #17181C);
+  }
+
+  /* OPTION 1: Subtle Noise */
+  /* OPTION 1: Subtle Noise (Corrected for Light & Dark Mode) */
+  .card-glass.bg-noise::before {
+    /* Black noise for light mode */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity=".4" fill="red"/></svg>');
+  }
+
+  .dark .card-glass.bg-noise::before {
+    /* White noise for dark mode */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.1" fill="white"/></svg>');
+  }
+
+
+  /* OPTION 2: Gradient Mesh */
+  .card-glass.bg-mesh::before {
+    /* Light Mode Mesh */
+    background-image: radial-gradient(at 20% 90%, #B91C1C20 0px, transparent 50%), 
+                      radial-gradient(at 80% 10%, #57534E25 0px, transparent 50%);
+  }
+  .dark .card-glass.bg-mesh::before {
+    /* Dark Mode Mesh */
+    background-image: radial-gradient(at 20% 90%, #DC262625 0px, transparent 50%),
+                      radial-gradient(at 80% 10%, #82827D30 0px, transparent 50%);
+  }
+
+
+  /* OPTION 3: Diagonal Lines */
+  .card-glass.bg-lines {
+    /* Sets the line color */
+    color: #33161615; /* Ink Black at 15% opacity */
+  }
+  .dark .card-glass.bg-lines {
+    color: #E7E7E215; /* Bone White at 15% opacity */
+  }
+  .card-glass.bg-lines::before {
+    background-image: repeating-linear-gradient(-45deg, 
+      currentColor 0, currentColor 1px, 
+      transparent 0, transparent 10px
+    );
+  }
+
+
+  /* OPTION 4: Dot Grid */
+  .card-glass.bg-dots {
+    color: #0c0a091e; /* Ink Black at 20% opacity */
+  }
+  .dark .card-glass.bg-dots {
+    color: #e7e7e211; /* Bone White at 20% opacity */
+  }
+  .card-glass.bg-dots::before {
+    background-image: radial-gradient(currentColor 1px, transparent 0);
+    background-size: 15px 15px;
+  }
+
+
+  /* OPTION 5: Blueprint Grid */
+  .card-glass.bg-grid {
+    color: #0C0A0910; /* Ink Black at 10% opacity */
+  }
+  .dark .card-glass.bg-grid {
+    color: #E7E7E210; /* Bone White at 10% opacity */
+  }
+  .card-glass.bg-grid::before {
+    background-image: linear-gradient(currentColor 1px, transparent 0), 
+                      linear-gradient(to right, currentColor 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  
+  
+  /* OPTION 6: Soft Waves */
+  .card-glass.bg-waves::before {
+    /* Light Mode Waves */
+    background-image: radial-gradient(circle at 0% 50%, #F5F5F4 0%, #EAE9E8 25%, transparent 50%),
+                      radial-gradient(circle at 100% 50%, #F5F5F4 0%, #EAE9E8 25%, transparent 50%);
+    background-size: 40px 80px;
+  }
+  .dark .card-glass.bg-waves::before {
+    /* Dark Mode Waves */
+    background-image: radial-gradient(circle at 0% 50%, #212328 0%, #17181C 30%, transparent 60%),
+                      radial-gradient(circle at 100% 50%, #212328 0%, #17181C 30%, transparent 60%);
+    background-size: 40px 80px;
+  }
 }
+
+
 
 
 
