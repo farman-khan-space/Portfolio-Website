@@ -37,10 +37,10 @@
     
     
 
-<header class="fixed top-0 left-0 w-full z-50 bg-white/[1] dark:bg-background/[1] backdrop-blur-10xl border-b border-primary/[0.1] shadow-sm">
+<header class="fixed top-0 left-0 w-full z-50 bg-background/[.65] dark:bg-background/[.65] backdrop-blur-sm border-b border-primary/[0.1] shadow-sm">
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="flex justify-between items-center h-20">
-           <a href="/" aria-label="Farman Khan Home" class="group">
+            <a href="/" aria-label="Farman Khan Home" class="group">
                 <div class="flex items-center space-x-4 dark:hidden transition-transform duration-300 group-hover:-translate-y-0.5">
                     <img src="/img/logo-light.svg" alt="Logo" class="h-10 hidden sm:block transition-shadow group-hover:drop-shadow-lg">
                     <img src="/img/wordmark-light.svg" alt="Farman Khan" class="h-8 transition-shadow group-hover:drop-shadow-lg">
@@ -50,52 +50,47 @@
                     <img src="/img/wordmark-dark.svg" alt="Farman Khan" class="h-8">
                 </div>
             </a>
-    
+
             <nav class="hidden md:flex space-x-2">
-                
                 
                     
                 
 
                 <a href="/" 
                    class="nav-link px-4 py-2 text-primary font-bold"
-                   aria-current="page"> 
+                   aria-current="page">
                   Home
                 </a>
-                
                 
 
                 <a href="/portfolio/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Portfolio
                 </a>
-                
                 
 
                 <a href="/blog/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Blog
                 </a>
-                
                 
 
                 <a href="/about/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   About
                 </a>
-                
                 
 
                 <a href="/contact/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Contact
                 </a></nav>
-    
-           <div class="md:hidden z-50">
+
+            <div class="md:hidden z-50">
                 <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
                     <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -109,137 +104,263 @@
     </div>
 </header>
 
-    <div id="mobile-menu"
-        class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
-        <div class="divide-y divide-accent w-full max-w-xs">
-            <div class="py-4"><a href="/" class="block text-lg font-medium text-foreground transition-colors hover:text-primary">Home</a></div>
-            <div class="py-4"><a href="/portfolio/"
-                    class="block text-lg font-medium text-foreground">Portfolio</a></div>
-            <div class="py-4"><a href="/blog/" class="block text-lg font-medium text-foreground">Blog</a>
-            </div>
-            <div class="py-4"><a href="/about/"
-                    class="block text-lg font-medium text-foreground">About</a></div>
-            <div class="py-4"><a href="/contact/"
-                    class="block text-lg font-medium text-foreground">Contact</a></div>
+
+<div id="mobile-menu" class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
+    <div class="divide-y divide-accent w-full max-w-xs">
+        
+            
+        
+        
+        <div class="py-4">
+            <a href="/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-primary font-bold"
+               aria-current="page">
+              Home
+            </a>
         </div>
-    </div>
+        
+        
+        <div class="py-4">
+            <a href="/portfolio/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Portfolio
+            </a>
+        </div>
+        
+        
+        <div class="py-4">
+            <a href="/blog/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Blog
+            </a>
+        </div>
+        
+        
+        <div class="py-4">
+            <a href="/about/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              About
+            </a>
+        </div>
+        
+        
+        <div class="py-4">
+            <a href="/contact/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Contact
+            </a>
+        </div></div>
+</div>
+
+
+
+    
 
     <main class="pt-20">
         
-<section class="text-center py-24 lg:py-40 px-6 relative isolate overflow-hidden border-b border-primary/25">
+<section class="text-center py-24 lg:py-40 px-6 relative isolate overflow-hidden border-b border-primary/10">
     <div class="absolute inset-0 z-[-2]">
         <picture><source type="image/webp" srcset="/img/optimized/data-analysis-bg-400w.webp 400w, /img/optimized/data-analysis-bg-800w.webp 800w, /img/optimized/data-analysis-bg-1200w.webp 1200w" sizes="100vw"><img src="/img/optimized/data-analysis-bg-400w.jpeg" alt="Abstract background image of data charts" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1200" height="800" srcset="/img/optimized/data-analysis-bg-400w.jpeg 400w, /img/optimized/data-analysis-bg-800w.jpeg 800w, /img/optimized/data-analysis-bg-1200w.jpeg 1200w" sizes="100vw"></picture>
     </div>
-    <div class="absolute inset-0 bg-background opacity-90 dark:bg-background dark:opacity-90 z-[-1]"></div> 
-    
+    <div class="absolute inset-0 bg-background opacity-90 dark:bg-background dark:opacity-90 z-[-1]"></div>
+
     <div class="container mx-auto relative z-10">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Farman Khan</h1>
         <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Transforming complex data into actionable insights and compelling narratives.</p>
         <div class="mt-10">
-            <a href="/portfolio/" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme  active:scale-95">
+            <a href="/portfolio/"
+                class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme  active:scale-95">
                 View My Work
             </a>
         </div>
     </div>
 </section>
 
-<section class="bg-background py-20  border-b border-primary/20">
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-heading text-3xl font-bold text-foreground">Recent Projects</h2>
-<p class="mt-2 text-lg text-foreground-muted">A selection of my latest data-driven work.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-    
-    
-        
-        <div class="block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-            <div class="overflow-hidden rounded">
-                <picture><source type="image/webp" srcset="/img/optimized/project-one-400w.webp 400w, /img/optimized/project-one-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img src="/img/optimized/project-one-400w.jpeg" alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" width="800" height="600" srcset="/img/optimized/project-one-400w.jpeg 400w, /img/optimized/project-one-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"></picture>
-            </div>
-            <div class="p-6 flex-grow">
-                <h3 class="font-heading text-xl font-bold text-foreground mb-2">Market Trend Analysis</h3>
-                <p class="text-foreground-muted mb-4">Analyzed sales data to identify key market trends and provide actionable growth strategies.</p>
-            </div>
-            <div class="p-6 pt-0">
-                <a href="/projects/project-one/" class="font-medium text-primary hover:font-bold hover:underline">
-                    Project Details
-                </a>
-            </div>
+<section class="bg-background py-20  border-b border-primary/10">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-3xl font-bold text-foreground">Recent Projects</h2>
+            <p class="mt-2 text-lg text-foreground-muted">A selection of my latest data-driven work.</p>
         </div>
-        
-    
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-</div>
-    <div class="text-center mt-16">
-        <a href="/portfolio/" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
-           View All Projects
-        </a>
+            
+            
+            
+            <div
+                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+                <div class="overflow-hidden rounded">
+                    <picture><source type="image/webp" srcset="/img/optimized/project-one-400w.webp 400w, /img/optimized/project-one-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img src="/img/optimized/project-one-400w.jpeg" alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" width="800" height="600" srcset="/img/optimized/project-one-400w.jpeg 400w, /img/optimized/project-one-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"></picture>
+                </div>
+                <div class="p-6 flex-grow">
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-2">Market Trend Analysis</h3>
+                    <p class="text-foreground-muted mb-4">Analyzed sales data to identify key market trends and provide actionable growth strategies.</p>
+
+                    
+                    
+                    <div class="my-4 flex flex-wrap gap-2">
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            SQL
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Python
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Power BI
+                        </span>
+                        
+                    </div>
+                    
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="/projects/project-one/" class="font-medium text-primary hover:font-bold hover:underline">
+                        Project Details
+                    </a>
+                </div>
+            </div>
+            
+            
+
+        </div>
+        <div class="text-center mt-16">
+            <a href="/portfolio/"
+                class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
+                View All Projects
+            </a>
+        </div>
     </div>
-</div>
-
 </section>
 
 <section class="bg-background py-20">
-<div class="container mx-auto px-6">
-<div class="text-center mb-12">
-<h2 class="font-heading text-3xl font-bold text-foreground">Latest from the Blog</h2>
-<p class="mt-2 text-lg text-foreground-muted">My recent thoughts on data, analytics, and storytelling.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-3xl font-bold text-foreground">Latest from the Blog</h2>
+            <p class="mt-2 text-lg text-foreground-muted">My recent thoughts on data, analytics, and storytelling.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-    
-    
-        
-        <div class="block bg-accent p-2 rounded-lg shadow-md border border-transparent hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-            <div class="overflow-hidden rounded">
-                <picture><source type="image/webp" srcset="/img/optimized/awesome-post-image-400w.webp 400w, /img/optimized/awesome-post-image-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img src="/img/optimized/awesome-post-image-400w.jpeg" alt="My Awesome Blog Post" class="w-full h-52 object-cover" loading="lazy" decoding="async" width="800" height="600" srcset="/img/optimized/awesome-post-image-400w.jpeg 400w, /img/optimized/awesome-post-image-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"></picture>
+            
+            
+            
+            <div
+                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+                <div class="overflow-hidden rounded">
+                    <picture><source type="image/webp" srcset="/img/optimized/awesome-post-image-400w.webp 400w, /img/optimized/awesome-post-image-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img src="/img/optimized/awesome-post-image-400w.jpeg" alt="My Awesome Blog Post" class="w-full h-52 object-cover" loading="lazy" decoding="async" width="800" height="600" srcset="/img/optimized/awesome-post-image-400w.jpeg 400w, /img/optimized/awesome-post-image-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"></picture>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-sm text-foreground-muted mb-2">September 3, 2025 • 5 min read</p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">My Awesome Blog Post</h3>
+                    <p class="text-foreground-muted mb-6">A brief summary of my awesome blog post.</p>
+
+                    
+                    
+                </div>
+                <a href="/posts/my-first-post/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
+                    Read Article
+                </a>
             </div>
-            <div class="p-6 flex-grow">
-                <p class="text-sm text-foreground-muted mb-2">September 3, 2025 • 5 min read</p>
-                <h3 class="font-heading text-xl font-bold text-foreground mb-3">My Awesome Blog Post</h3>
-                <p class="text-foreground-muted mb-6">A brief summary of my awesome blog post.</p>
-            </div>
-            <a href="/posts/my-first-post/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
-                Read Article
+            
+            
+
+        </div>
+        <div class="text-center mt-16">
+            <a href="/blog/"
+                class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
+                View All Posts
             </a>
         </div>
-        
-    
-
-</div>
-    <div class="text-center mt-16">
-        <a href="/blog/" class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
-           View All Posts
-        </a>
     </div>
-</div>
-
 </section>
     </main>
 
     <footer class="bg-accent border-t border-accent/50">
-        <div class="container mx-auto px-6 py-12 text-center text-foreground-muted border-t border-primary/[0.1]"> 
-    <div class="flex justify-center space-x-6 mb-6"> 
         
-        <a href="YOUR_GITHUB_URL" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a> 
-        <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a> 
-        <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a> 
+<div class="bg-accent text-foreground-muted border-t border-primary/[0.1]">
+    <div class="container mx-auto px-6 py-12">
+
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-12">
+
+            <!-- Column 1: Site Navigation -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Important Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="/portfolio/" class="hover:text-primary transition-colors">Portfolio</a></li>
+                    <li><a href="/blog/" class="hover:text-primary transition-colors">Blog</a></li>
+                    <li><a href="/about/" class="hover:text-primary transition-colors">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Recent Projects -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Recent Projects</h3>
+                <ul class="space-y-2">
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/project-one/" class="hover:text-primary transition-colors">
+                            Market Trend Analysis
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Latest Blog Posts -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Latest Posts</h3>
+                <ul class="space-y-2">
+                    
+                    
+                    
+                    <li>
+                        <a href="/posts/my-first-post/" class="hover:text-primary transition-colors">
+                            My Awesome Blog Post
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="text-center text-foreground-muted border-t border-primary/[0.1] ">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/farman-khan-space" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
+        </div>
+
     </div>
-    <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
 </div>
+
 
 <div class="fixed bottom-5 right-5 z-50 flex flex-col space-y-3">
     <button id="scroll-to-top" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme opacity-0 invisible" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
     <button id="theme-toggle-floating" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme" title="Toggle theme">
-        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
 </div>
+
+
     </footer>
 
     <script>

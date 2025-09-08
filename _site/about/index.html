@@ -37,10 +37,10 @@
     
     
 
-<header class="fixed top-0 left-0 w-full z-50 bg-white/[1] dark:bg-background/[1] backdrop-blur-10xl border-b border-primary/[0.1] shadow-sm">
+<header class="fixed top-0 left-0 w-full z-50 bg-background/[.65] dark:bg-background/[.65] backdrop-blur-sm border-b border-primary/[0.1] shadow-sm">
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="flex justify-between items-center h-20">
-           <a href="/" aria-label="Farman Khan Home" class="group">
+            <a href="/" aria-label="Farman Khan Home" class="group">
                 <div class="flex items-center space-x-4 dark:hidden transition-transform duration-300 group-hover:-translate-y-0.5">
                     <img src="/img/logo-light.svg" alt="Logo" class="h-10 hidden sm:block transition-shadow group-hover:drop-shadow-lg">
                     <img src="/img/wordmark-light.svg" alt="Farman Khan" class="h-8 transition-shadow group-hover:drop-shadow-lg">
@@ -50,52 +50,47 @@
                     <img src="/img/wordmark-dark.svg" alt="Farman Khan" class="h-8">
                 </div>
             </a>
-    
+
             <nav class="hidden md:flex space-x-2">
-                
                 
 
                 <a href="/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Home
                 </a>
-                
                 
 
                 <a href="/portfolio/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Portfolio
                 </a>
-                
                 
 
                 <a href="/blog/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Blog
                 </a>
-                
                 
                     
                 
 
                 <a href="/about/" 
                    class="nav-link px-4 py-2 text-primary font-bold"
-                   aria-current="page"> 
+                   aria-current="page">
                   About
                 </a>
-                
                 
 
                 <a href="/contact/" 
                    class="nav-link px-4 py-2 "
-                   > 
+                   >
                   Contact
                 </a></nav>
-    
-           <div class="md:hidden z-50">
+
+            <div class="md:hidden z-50">
                 <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
                     <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -109,24 +104,65 @@
     </div>
 </header>
 
-    <div id="mobile-menu"
-        class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
-        <div class="divide-y divide-accent w-full max-w-xs">
-            <div class="py-4"><a href="/" class="block text-lg font-medium text-foreground transition-colors hover:text-primary">Home</a></div>
-            <div class="py-4"><a href="/portfolio/"
-                    class="block text-lg font-medium text-foreground">Portfolio</a></div>
-            <div class="py-4"><a href="/blog/" class="block text-lg font-medium text-foreground">Blog</a>
-            </div>
-            <div class="py-4"><a href="/about/"
-                    class="block text-lg font-medium text-foreground">About</a></div>
-            <div class="py-4"><a href="/contact/"
-                    class="block text-lg font-medium text-foreground">Contact</a></div>
+
+<div id="mobile-menu" class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
+    <div class="divide-y divide-accent w-full max-w-xs">
+        
+        
+        <div class="py-4">
+            <a href="/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Home
+            </a>
         </div>
-    </div>
+        
+        
+        <div class="py-4">
+            <a href="/portfolio/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Portfolio
+            </a>
+        </div>
+        
+        
+        <div class="py-4">
+            <a href="/blog/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Blog
+            </a>
+        </div>
+        
+            
+        
+        
+        <div class="py-4">
+            <a href="/about/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-primary font-bold"
+               aria-current="page">
+              About
+            </a>
+        </div>
+        
+        
+        <div class="py-4">
+            <a href="/contact/" 
+               class="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+               >
+              Contact
+            </a>
+        </div></div>
+</div>
+
+
+
+    
 
     <main class="pt-20">
         
-<section class="text-center py-24 lg:py-32 px-6 bg-accent">
+<section class="text-center py-24 lg:py-32 px-6 bg-accent border-b border-primary/10">
     <div class="container mx-auto">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">About Me</h1>
         <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
@@ -175,25 +211,85 @@
     </main>
 
     <footer class="bg-accent border-t border-accent/50">
-        <div class="container mx-auto px-6 py-12 text-center text-foreground-muted border-t border-primary/[0.1]"> 
-    <div class="flex justify-center space-x-6 mb-6"> 
         
-        <a href="YOUR_GITHUB_URL" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a> 
-        <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a> 
-        <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a> 
+<div class="bg-accent text-foreground-muted border-t border-primary/[0.1]">
+    <div class="container mx-auto px-6 py-12">
+
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-12">
+
+            <!-- Column 1: Site Navigation -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Important Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="/portfolio/" class="hover:text-primary transition-colors">Portfolio</a></li>
+                    <li><a href="/blog/" class="hover:text-primary transition-colors">Blog</a></li>
+                    <li><a href="/about/" class="hover:text-primary transition-colors">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Recent Projects -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Recent Projects</h3>
+                <ul class="space-y-2">
+                    
+                    
+                    
+                    <li>
+                        <a href="/projects/project-one/" class="hover:text-primary transition-colors">
+                            Market Trend Analysis
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+            <!-- Column 3: Latest Blog Posts -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Latest Posts</h3>
+                <ul class="space-y-2">
+                    
+                    
+                    
+                    <li>
+                        <a href="/posts/my-first-post/" class="hover:text-primary transition-colors">
+                            My Awesome Blog Post
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="text-center text-foreground-muted border-t border-primary/[0.1] ">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/farman-khan-space" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
+        </div>
+
     </div>
-    <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
 </div>
+
 
 <div class="fixed bottom-5 right-5 z-50 flex flex-col space-y-3">
     <button id="scroll-to-top" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme opacity-0 invisible" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
     <button id="theme-toggle-floating" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme" title="Toggle theme">
-        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
 </div>
+
+
     </footer>
 
     <script>
