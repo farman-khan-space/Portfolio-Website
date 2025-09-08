@@ -1,0 +1,50 @@
+---
+title: Thank You!
+layout: base.njk
+permalink: /thank-you/
+---
+<section class="flex items-center justify-center text-center bg-background py-20 lg:py-32 px-6" style="min-height: calc(100vh - 10rem);">
+<div class="container mx-auto">
+
+    {# A simple icon to give visual confirmation #}
+    <div class="flex justify-center mb-6">
+        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-accent border border-primary/10">
+            <svg class="h-10 w-10 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+    </div>
+
+    <h1 class="mt-4 font-heading text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+        Message Sent Successfully!
+    </h1>
+
+    <p class="mt-4 max-w-md mx-auto text-lg text-foreground-muted">
+        Thank you for reaching out. I've received your message and will get back to you at the email address you provided as soon as possible.
+    </p>
+
+    <div class="mt-8">
+        <a href="{{ '/' | url }}"
+            class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme active:scale-95">
+            Return to Homepage
+        </a>
+    </div>
+
+</div>
+
+</section>
+
+
+#### Step 2: Update Your Contact Form HTML
+
+Now, we just need to add one small piece of information to your contact form to tell it where to go after submission.
+
+1.  Open your `src/contact.njk` file.
+2.  Find the opening `<form>` tag. It currently looks like this:
+    ```html
+    <form name="contact" method="POST" netlify>
+    ```
+3.  Add an `action` attribute to it that points to your new "Thank You" page, like this:
+    ```html
+    <form name="contact" method="POST" action="/thank-you/" netlify>
+    ```
