@@ -1,19 +1,78 @@
-<div class="container mx-auto px-6 py-12 text-center text-foreground-muted border-t border-primary/[0.1]"> 
-    <div class="flex justify-center space-x-6 mb-6"> 
-        {# I added aria-hidden="true" to the icons and updated the hrefs #}
-        <a href="YOUR_GITHUB_URL" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a> 
-        <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a> 
-        <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a> 
+{# Main footer container with background color and padding #}
+<div class="bg-accent text-foreground-muted border-t border-primary/[0.1]">
+    <div class="container mx-auto px-6 py-12">
+
+        {# Grid container for the columns. It's a single column on mobile and three columns on medium screens and up. #}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left mb-12">
+
+            <!-- Column 1: Site Navigation -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Important Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="{{ '/' | url }}" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="{{ '/portfolio/' | url }}" class="hover:text-primary transition-colors">Portfolio</a></li>
+                    <li><a href="{{ '/blog/' | url }}" class="hover:text-primary transition-colors">Blog</a></li>
+                    <li><a href="{{ '/about/' | url }}" class="hover:text-primary transition-colors">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Recent Projects -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Recent Projects</h3>
+                <ul class="space-y-2">
+                    {# This Nunjucks loop gets the 3 most recent projects from your collection #}
+                    {% for project in collections.projects | reverse %}
+                    {% if loop.index0 < 3 %}
+                    <li>
+                        <a href="{{ project.url | url }}" class="hover:text-primary transition-colors">
+                            {{ project.data.title }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Column 3: Latest Blog Posts -->
+            <div>
+                <h3 class="font-bold text-lg text-foreground mb-4">Latest Posts</h3>
+                <ul class="space-y-2">
+                    {# This Nunjucks loop gets the 3 most recent posts from your collection #}
+                    {% for post in collections.posts | reverse %}
+                    {% if loop.index0 < 3 %}
+                    <li>
+                        <a href="{{ post.url | url }}" class="hover:text-primary transition-colors">
+                            {{ post.data.title }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+        {# Bottom section with social links and copyright, centered #}
+        <div class="text-center text-foreground-muted border-t border-primary/[0.1] pt-8">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="YOUR_GITHUB_URL" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; {% year %} Farman Khan. All Rights Reserved.</p>
+        </div>
+
     </div>
-    <p>&copy; {% year %} Farman Khan. All Rights Reserved.</p>
 </div>
 
+{# Your existing floating buttons remain unchanged #}
 <div class="fixed bottom-5 right-5 z-50 flex flex-col space-y-3">
     <button id="scroll-to-top" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme opacity-0 invisible" title="Go to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
     <button id="theme-toggle-floating" class="h-12 w-12 flex items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:scale-110 transition-transform duration-theme" title="Toggle theme">
-        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="sun h-6 w-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon h-6 w-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
 </div>
+
