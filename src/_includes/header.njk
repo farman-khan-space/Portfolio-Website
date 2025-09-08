@@ -9,7 +9,7 @@
 <header class="fixed top-0 left-0 w-full z-50 bg-background/[.65] dark:bg-background/[.65] backdrop-blur-sm border-b border-primary/[0.1] shadow-sm">
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="flex justify-between items-center h-20">
-           <a href="{{ '/' | url }}" aria-label="Farman Khan Home" class="group">
+            <a href="{{ '/' | url }}" aria-label="Farman Khan Home" class="group">
                 <div class="flex items-center space-x-4 dark:hidden transition-transform duration-300 group-hover:-translate-y-0.5">
                     <img src="{{ '/img/logo-light.svg' | url }}" alt="Logo" class="h-10 hidden sm:block transition-shadow group-hover:drop-shadow-lg">
                     <img src="{{ '/img/wordmark-light.svg' | url }}" alt="Farman Khan" class="h-8 transition-shadow group-hover:drop-shadow-lg">
@@ -19,10 +19,9 @@
                     <img src="{{ '/img/wordmark-dark.svg' | url }}" alt="Farman Khan" class="h-8">
                 </div>
             </a>
-    
+
             <nav class="hidden md:flex space-x-2">
               {%- for item in navigation -%}
-                {# This new logic correctly identifies the active section #}
                 {% set isActive = false %}
                 {% if item.url == page.url %}
                     {% set isActive = true %}
@@ -34,13 +33,13 @@
 
                 <a href="{{ item.url | url }}" 
                    class="nav-link px-4 py-2 {% if isActive %}text-primary font-bold{% endif %}"
-                   {% if isActive %}aria-current="page"{% endif %}> {# <-- I ADDED THIS LINE #}
+                   {% if isActive %}aria-current="page"{% endif %}>
                   {{ item.text }}
                 </a>
               {%- endfor -%}
             </nav>
-    
-           <div class="md:hidden z-50">
+
+            <div class="md:hidden z-50">
                 <button id="menu-toggle" class="p-2 -mr-2 rounded-md" aria-label="Open navigation menu">
                     <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -53,3 +52,28 @@
         </div>
     </div>
 </header>
+
+{# This is the mobile menu overlay that appears when you click the hamburger icon #}
+<div id="mobile-menu" class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
+    <div class="divide-y divide-accent w-full max-w-xs">
+      {%- for item in navigation -%}
+        {% set isActive = false %}
+        {% if item.url == page.url %}
+            {% set isActive = true %}
+        {% elseif item.url == '/blog/' and page.filePathStem.startsWith('/posts/') %}
+            {% set isActive = true %}
+        {% elseif item.url == '/portfolio/' and page.filePathStem.startsWith('/projects/') %}
+            {% set isActive = true %}
+        {% endif %}
+        
+        <div class="py-4">
+            <a href="{{ item.url | url }}" 
+               class="block text-lg font-medium transition-colors hover:text-primary {% if isActive %}text-primary font-bold{% else %}text-foreground{% endif %}"
+               {% if isActive %}aria-current="page"{% endif %}>
+              {{ item.text }}
+            </a>
+        </div>
+      {%- endfor -%}
+    </div>
+</div>
+
