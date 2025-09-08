@@ -4,33 +4,101 @@ layout: base.njk
 permalink: /contact/
 ---
 
-<section class="text-center py-24 lg:py-32 px-6 bg-accent  border-b border-primary/10">
+{# --- Hero Section --- #}
+<section class="text-center py-24 lg:py-32 px-6 bg-accent border-b border-primary/10">
     <div class="container mx-auto">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Get In Touch</h1>
-        <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Have a question, a project idea, or just want to connect? I'd love to hear from you. The best ways to reach me are below.</p>
+        <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Have a question, a project idea, or just want to connect? I'd love to hear from you. Fill out the form below or use one of the direct links.</p>
     </div>
 </section>
 
-<section class="bg-background py-20">
+{# --- Main Content Section --- #}
+<section class="bg-background py-20 lg:py-24">
     <div class="container mx-auto px-6">
-        <div class="max-w-md mx-auto text-center">
 
-            <h2 class="font-heading text-3xl font-bold text-foreground mb-8">Contact Details</h2>
-            <div class="space-y-8 flex flex-col items-center">
-                <a href="mailto:email@example.com" class="inline-flex items-center group">
-                    <i class="bi bi-envelope-fill text-3xl text-primary"></i>
-                    <span class="ml-4 text-xl text-foreground-muted group-hover:underline">email@example.com</span>
-                </a>
-                <a href="#" class="inline-flex items-center group">
-                    <i class="bi bi-linkedin text-3xl text-primary"></i>
-                    <span class="ml-4 text-xl text-foreground-muted group-hover:underline">linkedin.com/in/your-profile</span>
-                </a>
-                <a href="https://github.com/farman-khan-space" class="inline-flex items-center group">
-                    <i class="bi bi-github text-3xl text-primary"></i>
-                    <span class="ml-4 text-xl text-foreground-muted group-hover:underline">Github</span>
-                </a>
+        {# This is the main grid container. It creates the two-column layout on large screens. #}
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 max-w-6xl mx-auto">
+
+            <!-- Left Column: Contact Info & Links -->
+            <div class="mb-12 lg:mb-0">
+                <h2 class="font-heading text-3xl font-bold text-foreground mb-4">Contact Information</h2>
+                <p class="text-foreground-muted mb-8">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                </p>
+
+                <div class="space-y-6">
+                    {# Email Link #}
+                    <a href="mailto:YOUR_EMAIL@example.com" class="flex items-center group">
+                        <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-accent border border-primary/10">
+                            <i class="bi bi-envelope-fill text-xl text-primary"></i>
+                        </div>
+                        <span class="ml-4 text-lg text-foreground-muted group-hover:text-primary transition-colors">YOUR_EMAIL@example.com</span>
+                    </a>
+                    {# LinkedIn Link #}
+                    <a href="YOUR_LINKEDIN_URL" target="_blank" class="flex items-center group">
+                        <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-accent border border-primary/10">
+                            <i class="bi bi-linkedin text-xl text-primary"></i>
+                        </div>
+                        <span class="ml-4 text-lg text-foreground-muted group-hover:text-primary transition-colors">Connect on LinkedIn</span>
+                    </a>
+                    {# GitHub Link #}
+                    <a href="https://github.com/farman-khan-space" target="_blank" class="flex items-center group">
+                        <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-accent border border-primary/10">
+                            <i class="bi bi-github text-xl text-primary"></i>
+                        </div>
+                        <span class="ml-4 text-lg text-foreground-muted group-hover:text-primary transition-colors">Follow on GitHub</span>
+                    </a>
+                </div>
             </div>
 
+            <!-- Right Column: Contact Form -->
+            <div>
+                {# This form is set up to work with Netlify's free form handling #}
+                <form name="contact" method="POST" netlify>
+                    <div class="space-y-6">
+                        
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-foreground mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full bg-accent border border-primary/10 rounded-md px-4 py-2 text-foreground focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow"
+                                   placeholder="e.g., John Doe">
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-foreground mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full bg-accent border border-primary/10 rounded-md px-4 py-2 text-foreground focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow"
+                                   placeholder="e.g., you@example.com">
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-bold text-foreground mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                   class="w-full bg-accent border border-primary/10 rounded-md px-4 py-2 text-foreground focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow"
+                                   placeholder="e.g., Project Inquiry">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-bold text-foreground mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full bg-accent border border-primary/10 rounded-md px-4 py-2 text-foreground focus:ring-2 focus:ring-primary/50 focus:border-primary transition-shadow"
+                                      placeholder="Tell me a little more about your project or question..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit"
+                                    class="w-full bg-primary text-white font-bold py-3 px-6 rounded-md shadow-lg hover:scale-[1.02] transition-transform duration-theme active:scale-95">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
