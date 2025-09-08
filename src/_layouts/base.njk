@@ -37,20 +37,7 @@
     
     {% include "header.njk" %}
 
-    <div id="mobile-menu"
-        class="fixed inset-0 h-screen bg-background z-40 flex flex-col items-center justify-center text-center transition-opacity duration-300 ease-in-out opacity-0 invisible md:hidden">
-        <div class="divide-y divide-accent w-full max-w-xs">
-            <div class="py-4"><a href="{{ '/' | url }}" class="block text-lg font-medium text-foreground transition-colors hover:text-primary">Home</a></div>
-            <div class="py-4"><a href="{{ '/portfolio/' | url }}"
-                    class="block text-lg font-medium text-foreground">Portfolio</a></div>
-            <div class="py-4"><a href="{{ '/blog/' | url }}" class="block text-lg font-medium text-foreground">Blog</a>
-            </div>
-            <div class="py-4"><a href="{{ '/about/' | url }}"
-                    class="block text-lg font-medium text-foreground">About</a></div>
-            <div class="py-4"><a href="{{ '/contact/' | url }}"
-                    class="block text-lg font-medium text-foreground">Contact</a></div>
-        </div>
-    </div>
+    
 
     <main class="pt-20">
         {{ content | safe }}
