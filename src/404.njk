@@ -1,0 +1,28 @@
+---
+title: Page Not Found
+layout: base.njk
+permalink: /404.html
+---
+{# This section creates a full-height container to center the content on the page #}<section class="flex items-center justify-center text-center bg-background py-20 lg:py-32 px-6" style="min-height: calc(100vh - 10rem);"><div class="container mx-auto">    {# The large, stylized "404" text #}
+    <p class="font-heading text-8xl md:text-9xl font-bold text-primary opacity-75">404</p>
+
+    {# The main headline, themed for a data analyst #}
+    <h1 class="mt-4 font-heading text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+        Query Returned No Results
+    </h1>
+
+    {# The helpful paragraph explaining the situation #}
+    <p class="mt-4 max-w-md mx-auto text-lg text-foreground-muted">
+        It seems the page you’re looking for has been misplaced in the data stream. The link might be outdated, or the data point has been moved.
+    </p>
+
+    {# The styled button to go back to the homepage #}
+    <div class="mt-8">
+        <a href="{{ '/' | url }}"
+            class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme active:scale-95">
+            Return to Homepage
+        </a>
+    </div>
+
+</div>
+</section>
