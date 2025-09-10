@@ -4,6 +4,7 @@ date: 2025-09-03
 readTime: 5 min read
 summary: A brief summary of my awesome blog post.
 featuredImage: /img/posts/awesome-post-image.png
+headerImage: /img/headers/post-header-one.jpg
 layout:  post-layout.njk
 ---
 

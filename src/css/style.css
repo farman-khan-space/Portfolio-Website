@@ -1312,6 +1312,24 @@ div[class*="language-"] {
   background-size: 40px 80px;
 }
 
+.skill-pill {
+  display: inline-block;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: rgb(var(--color-primary) / 0.2);
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-accent) / var(--tw-bg-opacity, 1));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(var(--color-primary) / var(--tw-text-opacity, 1));
+}
+
 .visible {
   visibility: visible;
 }
@@ -1474,6 +1492,10 @@ div[class*="language-"] {
   height: 3rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -1490,6 +1512,10 @@ div[class*="language-"] {
   height: 2rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1504,6 +1530,10 @@ div[class*="language-"] {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-20 {
@@ -1524,6 +1554,10 @@ div[class*="language-"] {
 
 .max-w-3xl {
   max-width: 48rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .max-w-6xl {
@@ -1612,6 +1646,12 @@ div[class*="language-"] {
   margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1634,12 +1674,6 @@ div[class*="language-"] {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -1687,6 +1721,10 @@ div[class*="language-"] {
 
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-b {
@@ -1744,6 +1782,10 @@ div[class*="language-"] {
   background-color: rgb(var(--color-background) / .65);
 }
 
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
+}
+
 .bg-foreground {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-foreground) / var(--tw-bg-opacity, 1));
@@ -1752,6 +1794,10 @@ div[class*="language-"] {
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-primary) / var(--tw-bg-opacity, 1));
+}
+
+.bg-primary\/10 {
+  background-color: rgb(var(--color-primary) / 0.1);
 }
 
 .object-cover {
@@ -1837,6 +1883,10 @@ div[class*="language-"] {
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-center {
@@ -1928,6 +1978,10 @@ div[class*="language-"] {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1960,6 +2014,16 @@ div[class*="language-"] {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-md {
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .backdrop-blur-lg {
@@ -2187,6 +2251,10 @@ div[class*="language-"] {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:text-left {

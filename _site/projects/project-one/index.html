@@ -163,15 +163,26 @@
     <main class="pt-20">
         
 <article>
-    <section class="text-center py-20 lg:py-24 px-6 bg-accent">
-        <div class="container mx-auto">
-            <h1 class="font-heading text-4xl md:text-5xl font-bold text-foreground tracking-tight">Market Trend Analysis</h1>
-            
-            <p class="mt-4 text-lg text-foreground-muted">August 30, 2025  </p>
-            
-        </div>
-    </section>
+    
+    <header class="relative isolate overflow-hidden h-96">
+        
+        
 
+        
+        <div class="absolute inset-0 bg-black/60 z-[-1]"></div>
+
+        
+        <div class="h-full flex flex-col justify-center items-center text-center px-6">
+            <div class="container mx-auto">
+                <h1 class="font-heading text-4xl md:text-6xl font-bold text-white tracking-tight drop-shadow-lg">Market Trend Analysis</h1>
+                
+                <p class="mt-4 text-lg text-white/80 drop-shadow-md">August 30, 2025 </p>
+                
+            </div>
+        </div>
+    </header>
+
+    
     <section class="bg-background py-16">
         <div class="container mx-auto px-6">
             <div class="prose dark:prose-invert max-w-3xl mx-auto">
@@ -203,6 +214,7 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
         </div>
     </section>
 </article>
+
     </main>
 
     <footer class="bg-accent border-t border-accent/50">
@@ -215,12 +227,14 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 
             <!-- Column 1: Site Navigation -->
             <div>
-                <h3 class="font-bold text-lg text-foreground mb-4">Important Links</h3>
+                <h3 class="font-bold text-lg text-foreground mb-4">Navigation</h3>
                 <ul class="space-y-2">
                     <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
                     <li><a href="/portfolio/" class="hover:text-primary transition-colors">Portfolio</a></li>
                     <li><a href="/blog/" class="hover:text-primary transition-colors">Blog</a></li>
                     <li><a href="/about/" class="hover:text-primary transition-colors">About</a></li>
+                    
+                    <li><a href="/contact/" class="hover:text-primary transition-colors">Contact</a></li>
                 </ul>
             </div>
 
@@ -261,11 +275,11 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
         </div>
 
         
-        <div style="margin-bottom: 1rem;" class="text-center text-foreground-muted border-t border-primary/[0.1] ">
-            <div class="flex justify-center space-x-8 mb-6 "  style= "margin-top: 1rem"> 
+        <div class="text-center text-foreground-muted border-t border-primary/[0.1] pt-8">
+            <div class="flex justify-center space-x-6 mb-6">
                 <a href="https://github.com/farman-khan-space" target="_blank" aria-label="GitHub Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-github" aria-hidden="true"></i></a>
                 <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                <a href="mailto:YOUR_EMAIL_ADDRESS" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+                <a href="mailto:farmankhan.data@outlook.com" aria-label="Email Me" class="text-2xl hover:text-primary transition-colors duration-theme"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
             </div>
             <p>&copy; 2025 Farman Khan. All Rights Reserved.</p>
         </div>

@@ -196,6 +196,10 @@
                       radial-gradient(circle at 100% 50%, #212328 0%, #17181C 30%, transparent 60%);
     background-size: 40px 80px;
   }
+
+  .skill-pill {
+    @apply inline-block bg-accent text-primary font-medium text-sm py-2 px-4 rounded-full border border-primary/20;
+  }
 }
 
 

@@ -4,49 +4,103 @@ layout: base.njk
 permalink: /about/
 ---
 
+{# --- Hero Section --- #}
 <section class="text-center py-24 lg:py-32 px-6 bg-accent border-b border-primary/10">
     <div class="container mx-auto">
-        <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">About Me</h1>
+        <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">About Farman</h1>
         <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
     </div>
 </section>
 
-<section class="bg-background py-20">
+{# --- Main Content Section with Image & Intro --- #}
+<section class="bg-background py-20 lg:py-24">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto items-center">
             
-             <div class="lg:col-span-1">
-                <img src="https://placehold.co/500x500/27272a/white?text=Farman" alt="Farman Khan" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
+            <!-- Your Profile Picture -->
+            <div class="lg:col-span-1">
+                {# Replace this with your stylized B&W photo with a reddish gradient bg #}
+                <img src="https://placehold.co/500x500/0C0A09/DC2626?text=Farman&font=poppins" alt="Farman Khan" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
             </div>
 
+            <!-- Introduction Text -->
             <div class="lg:col-span-2">
                 <h2 class="font-heading text-3xl font-bold text-foreground mb-4">My Mission is to Make Data Speak.</h2>
                 <div class="space-y-4 text-lg text-foreground-muted">
-                    <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within data. My journey began with a curiosity for patterns and a drive to solve complex problems. Today, I leverage that curiosity to help businesses make smarter, data-informed decisions.</p>
-                    <p>I believe that data, in its raw form, is just noise. My role is to be the translator—to turn that noise into a clear signal, crafting compelling stories and visualizations that are not only insightful but also accessible to any audience.</p>
-                </div>
-
-                <div class="mt-10">
-                    <h3 class="font-heading text-2xl font-bold text-foreground mb-4">Core Skills</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">SQL</span>
-                        <span class="skill-pill">Python (Pandas, NumPy)</span>
-                        <span class="skill-pill">Tableau</span>
-                        <span class="skill-pill">Power BI</span>
-                        <span class="skill-pill">Excel</span>
-                        <span class="skill-pill">Statistical Analysis</span>
-                        <span class="skill-pill">Data Visualization</span>
-                        <span class="skill-pill">ETL Processes</span>
-                    </div>
+                    <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within complex datasets. My journey into the world of data began with a deep-seated curiosity for patterns and a drive to solve meaningful problems.</p>
+                    <p>I believe that raw data is like an unwritten story, full of potential but silent. My role is to be the translator—to turn that noise into a clear signal, crafting compelling visualizations and reports that are not only insightful but also accessible to any audience, from the technical expert to the boardroom executive.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
-<style>
-    .skill-pill {
-        @apply inline-block bg-accent text-primary font-medium text-sm py-2 px-4 rounded-full;
-    }
-</style>
+{# --- My Journey & Philosophy Section --- #}
+<section class="bg-accent py-20 lg:py-24">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center">
+             <h2 class="font-heading text-3xl font-bold text-foreground mb-12">My Approach</h2>
+        </div>
+        
+        <!-- Timeline-style layout -->
+        <div class="space-y-12">
+            <!-- Step 1: Curiosity -->
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">01</div>
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Start with 'Why'</h3>
+                    <p class="text-lg text-foreground-muted">Every great analysis begins not with data, but with a question. I focus on understanding the core business problem first to ensure my work is always relevant and impactful.</p>
+                </div>
+            </div>
+            <!-- Step 2: Process -->
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">02</div>
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Craft the Narrative</h3>
+                    <p class="text-lg text-foreground-muted">Data cleaning, processing, and statistical analysis are the grammar of my work. I meticulously prepare the data to build a story that is both accurate and trustworthy.</p>
+                </div>
+            </div>
+            <!-- Step 3: Impact -->
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">03</div>
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Deliver with Clarity</h3>
+                    <p class="text-lg text-foreground-muted">The final step is visualization. I use tools like Power BI and Tableau to create interactive dashboards and clear reports that empower stakeholders to see the full picture and act with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{# --- Skills & Tools Section --- #}
+<section class="bg-background py-20 lg:py-24">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+        <h2 class="font-heading text-3xl font-bold text-foreground mb-12">My Toolkit</h2>
+        <div class="flex flex-wrap gap-3 justify-center">
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Python (Pandas, NumPy)</span>
+            <span class="skill-pill">Tableau</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Microsoft Excel</span>
+            <span class="skill-pill">Statistical Analysis</span>
+            <span class="skill-pill">Data Visualization</span>
+            <span class="skill-pill">ETL Processes</span>
+            <span class="skill-pill">Data Storytelling</span>
+        </div>
+    </div>
+</section>
+
+{# --- Call to Action Section --- #}
+<section class="bg-accent py-20 lg:py-24">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
+        <h2 class="font-heading text-3xl font-bold text-foreground">Let's Build Something Great Together</h2>
+        <p class="mt-4 text-lg text-foreground-muted">Whether you have a specific project in mind or just want to chat about the potential in your data, I'm always open to new conversations.</p>
+        <div class="mt-8">
+            <a href="{{ '/contact/' | url }}"
+                class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow-lg hover:scale-105 transition-transform duration-theme active:scale-95">
+                Get In Touch
+            </a>
+        </div>
+    </div>
+</section>

@@ -3,7 +3,9 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-// Define the path prefix in one place
+// --- Import the sitemap plugin ---
+const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+
 const isProduction = process.env.NODE_ENV === 'production';
 const PATH_PREFIX = "/";
 
@@ -14,7 +16,6 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
     widths: [400, 800, 1200],
     formats: ["webp", "jpeg"],
     outputDir: "./_site/img/optimized/",
-    // Use the path prefix to create the correct URL path
     urlPath: path.join(PATH_PREFIX, "/img/optimized/"),
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
@@ -35,22 +36,42 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
 }
 
 module.exports = function(eleventyConfig) {
+  // --- Global Data for SEO ---
+  // This provides default values for the entire site.
+  eleventyConfig.addGlobalData("site", {
+    title: "Farman Khan | Data Analyst Portfolio",
+    description: "The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.",
+    url: "https://datamakingsense.space",
+    author: "Farman Khan"
+  });
+
   // --- PLUGINS ---
-  eleventyConfig.addPlugin(syntaxHighlight, {
-    showCopyButton: true,
+  eleventyConfig.addPlugin(syntaxHighlight, { showCopyButton: true });
+
+  // --- Add the sitemap plugin ---
+  eleventyConfig.addPlugin(pluginSitemap, {
+    sitemap: {
+      hostname: "https://datamakingsense.space",
+    },
   });
 
   // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
   eleventyConfig.addWatchTarget("./src/css/");
-  eleventyConfig.addPassthroughCopy("./src/img"); 
-  eleventyConfig.addPassthroughCopy("./src/img/favicons"); // <-- I ADDED THIS LINE
+  eleventyConfig.addPassthroughCopy("./src/img");
+  eleventyConfig.addPassthroughCopy("./src/img/favicons");
+  // --- Add robots.txt passthrough ---
+  eleventyConfig.addPassthroughCopy({ "./src/robots.txt": "/robots.txt" });
 
   // --- FILTERS & SHORTCODES ---
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL d, yyyy");
+  });
+  // --- Filter to create absolute URLs for SEO ---
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => {
+    return new URL(url, base).href;
   });
 
   // --- COLLECTIONS ---
@@ -70,7 +91,6 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    // Use the path prefix constant
     pathPrefix: PATH_PREFIX,
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
