@@ -1,11 +1,21 @@
 ---
 title: Market Trend Analysis
-summary: Analyzed sales data to identify key market trends and provide actionable growth strategies.
-featuredImage: /img/projects/project-one.png
-headerImage: /img/headers/project-header-one.jpg
+summary: Analyzed sales data to identify key market trends and provide actionable growth strategies
+
+
+# --- SEO & Social Media ---
+description: "A detailed, keyword-rich sentence for Google search results and social media previews."
+keywords: ["keyword 1", "data analysis", "case study", "your name"]
+tags: ["SQL", "Python", "Power BI"]
+
+
 layout:  post-layout.njk
 date: 2025-08-30
-tags: ["SQL", "Python", "Power BI"]
+
+#images
+featuredImage: /img/projects/market-trend/market-trend-card.png
+headerImage: /img/projects/market-trend/market-trend-header.png
+ogImage: /img/projects/market-trend/market-trend-social.png
 ---
 
 This is the content for the project's own page.
