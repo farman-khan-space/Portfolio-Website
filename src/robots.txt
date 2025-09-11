@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://datamakingsense.space/sitemap.xml
+Sitemap: https://datamakinsense.space/sitemap.xml
