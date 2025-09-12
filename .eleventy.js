@@ -2,13 +2,12 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const isProduction = process.env.NODE_ENV === 'production';
 const PATH_PREFIX = "/";
 
 async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
-  // ... existing imageShortcode function ...
   let srcPath = src.startsWith('/') ? `./src${src}` : src;
 
   let metadata = await Image(srcPath, {
@@ -34,25 +33,18 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // --- Global Data for SEO ---
   eleventyConfig.addGlobalData("site", {
     title: "Farman Khan | Data Analyst Portfolio",
     description: "The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.",
-    // --- UPDATED THIS LINE ---
     url: "https://datamakinsense.space",
     author: "Farman Khan"
   });
 
   // --- PLUGINS ---
   eleventyConfig.addPlugin(syntaxHighlight, { showCopyButton: true });
-
-  eleventyConfig.addPlugin(pluginSitemap, {
-    sitemap: {
-      // --- UPDATED THIS LINE ---
-      hostname: "https://datamakinsense.space",
-    },
-  });
+  eleventyConfig.addPlugin(pluginRss);
 
   // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
@@ -65,22 +57,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL d, yyyy");
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("LLLL d, yyyy");
   });
   eleventyConfig.addFilter("absoluteUrl", (url, base) => {
     return new URL(url, base).href;
   });
 
   // --- COLLECTIONS ---
-  // ... existing collections ...
-  eleventyConfig.addCollection("projects", function(collectionApi) {
+  eleventyConfig.addCollection("projects", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
-  eleventyConfig.addCollection("posts", function(collectionApi) {
+  eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
-
 
   // --- BASE CONFIG ---
   return {
