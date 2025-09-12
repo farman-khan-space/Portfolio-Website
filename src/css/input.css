@@ -68,7 +68,7 @@
     content: '';
   }
   .nav-link:hover::after {
-    @apply scale-x-100;
+    @apply scale-x-100 ;
   }
   div[class*="language-"] {
     position: relative;
@@ -206,9 +206,6 @@
   }
 
 
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background focus:ring-primary;
-  }
   
   /* --- NEW: Skip to Content Link --- */
   .skip-link {
@@ -220,18 +217,17 @@
     @apply fixed top-0 left-0 h-1 bg-primary z-[60] transition-all duration-100 ease-linear;
   }
   
-  /* Applying focus ring to important elements */
-  a, button, [role="button"], input {
-    @apply focus-ring;
-  }
+
   
   header {
-    @apply border-transparent; /* Make the border transparent by default */
-  }
+  @apply border-transparent transition-all duration-7000 ease-in-out; 
+}
 
-  header.scrolled {
-    @apply border-primary/[0.1]; /* Add the border color back when scrolled */
-  }
+header.scrolled {
+  @apply border-b border-primary/20 bg-background/65 dark:bg-background/65 shadow-xxl;
+}
+
+
 }
 
 
