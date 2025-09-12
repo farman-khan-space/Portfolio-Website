@@ -3,28 +3,22 @@ layout: base.njk
 ---
 
 <article>
-    {# This is the new, dynamic header section #}
     <header class="relative isolate overflow-hidden h-96">
-        {# This checks if a headerImage exists and displays it #}
         {% if headerImage %}
             {% image headerImage, title, "100vw", "absolute inset-0 h-full w-full object-cover z-[-2]" %}
         {% endif %}
-
-        {# This creates the dark, semi-transparent overlay for contrast #}
         <div class="absolute inset-0 bg-black/60 z-[-1]"></div>
-
-        {# This centers the title and date on top of the image #}
         <div class="h-full flex flex-col justify-center items-center text-center px-6">
             <div class="container mx-auto">
                 <h1 class="font-heading text-4xl md:text-6xl font-bold text-white tracking-tight drop-shadow-lg">{{ title }}</h1>
                 {% if date %}
-                <p class="mt-4 text-lg text-white/80 drop-shadow-md">{{ date | readableDate }} {% if readTime %}• {{ readTime }}{% endif %}</p>
+                {# --- UPDATED THIS LINE --- #}
+                <p class="mt-4 text-lg text-white/80 drop-shadow-md">{{ date | readableDate }} • {{ content | readingTime }}</p>
                 {% endif %}
             </div>
         </div>
     </header>
 
-    {# This is the main content section, which remains the same #}
     <section class="bg-background py-16">
         <div class="container mx-auto px-6">
             <div class="prose dark:prose-invert max-w-3xl mx-auto">

@@ -63,6 +63,15 @@ module.exports = function (eleventyConfig) {
     return new URL(url, base).href;
   });
 
+  // --- NEW: READING TIME FILTER ---
+  eleventyConfig.addFilter("readingTime", (content) => {
+    const textOnly = content.replace(/(<([^>]+)>)/gi, "");
+    const readingSpeed = 238; // Average reading speed in words per minute
+    const wordCount = textOnly.split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / readingSpeed);
+    return `${minutes} min read`;
+  });
+
   // --- COLLECTIONS ---
   eleventyConfig.addCollection("projects", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));

@@ -7,8 +7,6 @@
 
     
     
-
-
 <title>About Me</title>
 <meta name="description" content="The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.">
 <meta name="keywords" content="">
@@ -28,6 +26,9 @@
 
 
 <link rel="canonical" href="https://datamakinsense.space/about/">
+
+
+
 
 
     
@@ -58,6 +59,8 @@
 </head>
 
 <body class="bg-background text-foreground font-sans">
+    <div id="progress-bar" class="progress-bar"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
     
 
@@ -182,7 +185,7 @@
 
 
 
-    <main class="pt-20">
+    <main id="main-content" class="pt-20">
         
 
 <section class="text-center py-24 lg:py-32 px-6 bg-accent border-b border-primary/10">
@@ -373,31 +376,32 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Theme toggle logic
+
+            // --- Theme Toggle Logic ---
             const initializeTheme = () => {
-                const btn = document.getElementById('theme-toggle-floating');
-                if (!btn) return;
-                const htmlEl = document.documentElement;
-                btn.addEventListener('click', () => {
-                    htmlEl.classList.toggle('dark');
-                    const theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
-                    localStorage.setItem('theme', theme);
+                const toggleButton = document.getElementById('theme-toggle-floating');
+                if (!toggleButton) return;
+
+                toggleButton.addEventListener('click', () => {
+                    const isDark = document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
                 });
             };
 
-            // Mobile menu logic
+            // --- Mobile Menu Logic ---
             const initializeMobileMenu = () => {
-                const toggleBtn = document.getElementById('menu-toggle');
+                const toggleButton = document.getElementById('menu-toggle');
                 const mobileMenu = document.getElementById('mobile-menu');
                 const openIcon = document.getElementById('menu-icon-open');
                 const closeIcon = document.getElementById('menu-icon-close');
-                if (!toggleBtn || !mobileMenu || !openIcon || !closeIcon) return;
 
-                toggleBtn.addEventListener('click', () => {
-                    const isMenuOpen = mobileMenu.classList.contains('opacity-100');
-                    if (isMenuOpen) {
-                        mobileMenu.classList.remove('opacity-100', 'visible');
+                if (!toggleButton || !mobileMenu) return;
+
+                toggleButton.addEventListener('click', () => {
+                    const isVisible = mobileMenu.classList.contains('visible');
+                    if (isVisible) {
                         mobileMenu.classList.add('opacity-0', 'invisible');
+                        mobileMenu.classList.remove('opacity-100', 'visible');
                         document.body.style.overflow = '';
                         openIcon.classList.remove('hidden');
                         closeIcon.classList.add('hidden');
@@ -411,10 +415,11 @@
                 });
             };
 
-            // Scroll to top logic
+            // --- Scroll to Top Logic ---
             const initializeScrollToTop = () => {
                 const btn = document.getElementById('scroll-to-top');
                 if (!btn) return;
+
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 500) {
                         btn.classList.add('opacity-100', 'visible');
@@ -424,16 +429,53 @@
                         btn.classList.add('opacity-0', 'invisible');
                     }
                 });
+
                 btn.addEventListener('click', () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             };
 
-            initializeTheme();
-            initializeMobileMenu();
+            // --- Reading Progress Bar Logic ---
+            const initializeReadingProgress = () => {
+                const progressBar = document.getElementById('progress-bar');
+                if (!progressBar) return;
+
+                const updateProgress = () => {
+                    const contentElement = document.querySelector('article');
+                    if (!contentElement) {
+                        progressBar.style.width = '0%';
+                        return;
+                    }
+                    const totalHeight = contentElement.scrollHeight - window.innerHeight;
+                    const progress = (window.scrollY / totalHeight) * 100;
+                    progressBar.style.width = `${Math.min(progress, 100)}%`;
+                };
+
+                window.addEventListener('scroll', updateProgress);
+                updateProgress();
+            };
+
+            // --- Sticky Header Logic ---
+            const initializeStickyHeader = () => {
+                const header = document.querySelector('header');
+                if (!header) return;
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 10) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            };
+            
+            // --- Initialize All Scripts ---
+            initializeTheme(); 
+            initializeMobileMenu(); 
             initializeScrollToTop();
+            initializeReadingProgress();
+            initializeStickyHeader();
         });
     </script>
 </body>
-
 </html>
+
