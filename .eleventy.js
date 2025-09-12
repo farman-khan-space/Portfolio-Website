@@ -41,7 +41,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("site", {
     title: "Farman Khan | Data Analyst Portfolio",
     description: "The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.",
-    url: "https://datamakingsense.space",
+    url: "https://datamakinsense.space",
     author: "Farman Khan"
   });
 
@@ -51,7 +51,7 @@ module.exports = function(eleventyConfig) {
   // --- Add the sitemap plugin ---
   eleventyConfig.addPlugin(pluginSitemap, {
     sitemap: {
-      hostname: "https://datamakingsense.space",
+      hostname: "https://datamakinsense.space",
     },
   });
 
