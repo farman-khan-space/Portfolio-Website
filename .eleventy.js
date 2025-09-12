@@ -2,14 +2,13 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-// --- Import the sitemap plugin ---
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const isProduction = process.env.NODE_ENV === 'production';
 const PATH_PREFIX = "/";
 
 async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
+  // ... existing imageShortcode function ...
   let srcPath = src.startsWith('/') ? `./src${src}` : src;
 
   let metadata = await Image(srcPath, {
@@ -37,10 +36,10 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
 
 module.exports = function(eleventyConfig) {
   // --- Global Data for SEO ---
-  // This provides default values for the entire site.
   eleventyConfig.addGlobalData("site", {
     title: "Farman Khan | Data Analyst Portfolio",
     description: "The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.",
+    // --- UPDATED THIS LINE ---
     url: "https://datamakinsense.space",
     author: "Farman Khan"
   });
@@ -48,9 +47,9 @@ module.exports = function(eleventyConfig) {
   // --- PLUGINS ---
   eleventyConfig.addPlugin(syntaxHighlight, { showCopyButton: true });
 
-  // --- Add the sitemap plugin ---
   eleventyConfig.addPlugin(pluginSitemap, {
     sitemap: {
+      // --- UPDATED THIS LINE ---
       hostname: "https://datamakinsense.space",
     },
   });
@@ -60,7 +59,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addPassthroughCopy("./src/img/favicons");
-  // --- Add robots.txt passthrough ---
   eleventyConfig.addPassthroughCopy({ "./src/robots.txt": "/robots.txt" });
 
   // --- FILTERS & SHORTCODES ---
@@ -69,12 +67,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL d, yyyy");
   });
-  // --- Filter to create absolute URLs for SEO ---
   eleventyConfig.addFilter("absoluteUrl", (url, base) => {
     return new URL(url, base).href;
   });
 
   // --- COLLECTIONS ---
+  // ... existing collections ...
   eleventyConfig.addCollection("projects", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
@@ -82,6 +80,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/**/*.md").sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
+
 
   // --- BASE CONFIG ---
   return {
@@ -96,3 +95,4 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk"
   };
 };
+
