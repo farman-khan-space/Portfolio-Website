@@ -1,0 +1,3 @@
+[build]
+  command = ""       # no build command
+  publish = "_site"  # tell Netlify to publish from _site folder
