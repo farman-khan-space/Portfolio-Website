@@ -220,11 +220,11 @@
 
   
   header {
-  @apply border-transparent transition-all duration-7000 ease-in-out; 
+  @apply border-transparent transition-all duration-700 ease-in-out; 
 }
 
 header.scrolled {
-  @apply border-b border-primary/20 bg-background/65 dark:bg-background/65 shadow-xxl;
+  @apply border-b border-primary/20 bg-background/65 dark:bg-background/65 shadow-2xl;
 }
 
 
