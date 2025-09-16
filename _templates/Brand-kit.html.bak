@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Guide - datamakingsense.space</title>
+    <style>
+        /* --- Google Fonts Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap');
+
+        /* --- Basic Styles & Variables --- */
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-light-bg: #F7F7F7;
+            --color-dark-bg: #17181C;
+            --color-light-text: #0C0A09;
+            --color-dark-text: #E7E7E2;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-light-bg);
+            color: var(--color-light-text);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        /* --- Layout & Container --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* --- Typography Styles --- */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        h1 { font-size: 2.5rem; color: #B91C1C; }
+        h2 { font-size: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        /* --- Color Palette Styles --- */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .color-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .color-swatch {
+            height: 100px;
+        }
+        .color-info {
+            padding: 1rem;
+            background-color: #fafafa;
+        }
+        .color-name {
+            font-weight: 500;
+            margin: 0;
+        }
+        .color-hex {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0.25rem 0 0;
+        }
+
+        /* --- Typography Demo Styles --- */
+        .font-demo {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .font-demo .heading-font-demo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-top: 0;
+        }
+        .font-demo .body-font-demo {
+            font-family: var(--font-body);
+            max-width: 65ch; /* Optimal line length for reading */
+        }
+
+        /* --- Print Styles --- */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #ffffff;
+            }
+            .container {
+                box-shadow: none;
+                padding: 1rem;
+            }
+            h1 { color: #000000; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Brand Guide</h1>
+            <p style="margin-top: -1rem; font-weight: 500; color: #555;">datamakingsense.space</p>
+        </header>
+
+        <main>
+            <section id="colors">
+                <h2>Color Palette</h2>
+                
+                <h3>Light Mode</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #F7F7F7;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Stone White (Background)</p>
+                            <p class="color-hex">#F7F7F7</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #0C0A09;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Ink Black (Text)</p>
+                            <p class="color-hex">#0C0A09</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #57534E;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Warm Slate (Muted Text)</p>
+                            <p class="color-hex">#57534E</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #B91C1C;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Tori Red (Primary)</p>
+                            <p class="color-hex">#B91C1C</p>
+                        </div>
+                    </div>
+                     <div class="color-card">
+                        <div class="color-swatch" style="background-color: #F5F5F4;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Paper White (Accent)</p>
+                            <p class="color-hex">#F5F5F4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Dark Mode</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #17181C;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Charcoal Black (Background)</p>
+                            <p class="color-hex">#17181C</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #E7E7E2;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Bone White (Text)</p>
+                            <p class="color-hex">#E7E7E2</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #82827D;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Washed Stone (Muted Text)</p>
+                            <p class="color-hex">#82827D</p>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: #DC2626;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Vibrant Red (Primary)</p>
+                            <p class="color-hex">#DC2626</p>
+                        </div>
+                    </div>
+                     <div class="color-card">
+                        <div class="color-swatch" style="background-color: #212328;"></div>
+                        <div class="color-info">
+                            <p class="color-name">Dark Slate (Accent)</p>
+                            <p class="color-hex">#212328</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="typography">
+                <h2>Typography</h2>
+                
+                <div class="font-demo">
+                    <h3>Heading Font: Poppins</h3>
+                    <p class="heading-font-demo">Market Trend Analysis</p>
+                    <p>Used for all main headings (h1, h2, h3) to provide a bold, modern, and professional feel.</p>
+                </div>
+
+                <div class="font-demo">
+                    <h3>Body Font: Inter</h3>
+                    <p class="body-font-demo">This is the body text, used for paragraphs and other general content. Inter is a clean, highly readable sans-serif font that works beautifully for longer-form text, ensuring a comfortable reading experience for users on any device.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
