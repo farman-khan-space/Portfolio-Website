@@ -10,7 +10,7 @@ permalink: /
     </div>
     <div class="absolute inset-0 bg-background opacity-90 dark:bg-background dark:opacity-90 z-[-1]"></div>
 
-    <div class="container mx-auto relative z-10">
+    <div class="container mx-auto relative z-10" data-aos="fade-in">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Farman Khan</h1>
         <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Transforming complex data into actionable insights and compelling narratives.</p>
@@ -25,7 +25,7 @@ permalink: /
 
 <section class="bg-background py-20  border-b border-primary/10">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-in">
             <h2 class="font-heading text-3xl font-bold text-foreground">Recent Projects</h2>
             <p class="mt-2 text-lg text-foreground-muted">A selection of my latest data-driven work.</p>
         </div>
@@ -35,6 +35,7 @@ permalink: /
             {% for project in collections.projects %}
             {% if loop.index0 < 3 %}
             <div
+                data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
                 class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
                     {% image project.data.featuredImage, project.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-52 object-cover" %}
@@ -64,7 +65,7 @@ permalink: /
             {% endfor %}
 
         </div>
-        <div class="text-center mt-16">
+        <div class="text-center mt-16" data-aos="fade-up">
             <a href="{{ '/portfolio/' | url }}"
                 class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
                 View All Projects
@@ -75,7 +76,7 @@ permalink: /
 
 <section class="bg-background py-20">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-in">
             <h2 class="font-heading text-3xl font-bold text-foreground">Latest from the Blog</h2>
             <p class="mt-2 text-lg text-foreground-muted">My recent thoughts on data, analytics, and storytelling.</p>
         </div>
@@ -85,6 +86,7 @@ permalink: /
             {% for post in collections.posts %}
             {% if loop.index0 < 3 %}
             <div
+                data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
                 class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
                     {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-52 object-cover" %}
@@ -113,7 +115,7 @@ permalink: /
             {% endfor %}
 
         </div>
-        <div class="text-center mt-16">
+        <div class="text-center mt-16" data-aos="fade-up">
             <a href="{{ '/blog/' | url }}"
                 class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
                 View All Posts
