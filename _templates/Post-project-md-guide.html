@@ -99,7 +99,7 @@
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
-            opacity: 0.8;
+            opacity: 0;
             transition: opacity 0.2s;
         }
         pre:hover .copy-btn {
@@ -160,7 +160,6 @@
             padding: 10px 20px;
             margin: 20px 0;
             background-color: var(--details-bg);
-            font-style: italic;
         }
         
         mark {
@@ -175,6 +174,13 @@
             background: none;
             border: none;
             padding: 5px;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -195,51 +201,20 @@
         <details>
             <summary>Project Template (`project-template.md`)</summary>
             <div class="details-content">
-                <p>Use this template for your data analysis case studies and projects.</p>
-                <table>
+                 <table>
                     <thead>
-                        <tr>
-                            <th>Key</th>
-                            <th>Description & Example</th>
-                        </tr>
+                        <tr><th>Key</th><th>Description & Example</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><code>title</code></td>
-                            <td><b>(Required)</b> The main title of your project. Appears on the page and browser tab.<br><em>Example: "Customer Segmentation using K-Means Clustering"</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>summary</code></td>
-                            <td><b>(Required)</b> A short, one-sentence description shown on the main projects listing page.<br><em>Example: "An analysis of retail data to identify distinct customer groups for targeted marketing."</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>date</code></td>
-                            <td><b>(Required)</b> The publication date. Use the format <code>YYYY-MM-DD</code>.<br><em>Example: "2025-09-16"</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>tags</code></td>
-                            <td><b>(Required)</b> A list of tools, skills, or technologies used. These are used for filtering.<br><em>Example: `["Python", "Pandas", "Scikit-learn", "Seaborn"]`</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>description</code></td>
-                            <td>A longer sentence for SEO (Google search results) and social media link previews. Be descriptive!<br><em>Example: "A detailed data analysis case study on customer segmentation using Python, Pandas, and Scikit-learn's K-Means algorithm to uncover actionable business insights."</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>keywords</code></td>
-                            <td>A list of keywords for search engines. Include relevant terms.<br><em>Example: `["customer segmentation", "k-means", "data analysis", "python"]`</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>featuredImage</code></td>
-                            <td><b>(Required)</b> Path to the smaller image for the project summary card (800x600 recommended).<br><em>Example: `/img/projects/customer-segmentation/featured.png`</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>headerImage</code></td>
-                            <td><b>(Required)</b> Path to the large banner image at the top of the project page (1920x1080 recommended).<br><em>Example: `/img/projects/customer-segmentation/header.jpg`</em></td>
-                        </tr>
-                         <tr>
-                            <td><code>ogImage</code></td>
-                            <td><b>(Required)</b> Path to the image used for social media sharing (e.g., LinkedIn, Twitter). 1200x630 is the standard "Open Graph" size.<br><em>Example: `/img/projects/customer-segmentation/social.png`</em></td>
-                        </tr>
+                        <tr><td><code>title</code></td><td><b>(Required)</b> Main title of your project. Appears on the page and browser tab.</td></tr>
+                        <tr><td><code>summary</code></td><td><b>(Required)</b> Short, one-sentence description for the main projects listing page.</td></tr>
+                        <tr><td><code>date</code></td><td><b>(Required)</b> Publication date. Format: <code>YYYY-MM-DD</code>.</td></tr>
+                        <tr><td><code>tags</code></td><td><b>(Required)</b> A list of tools, skills, or technologies used. These are used for filtering. <br><em>Example: `["Python", "Pandas", "Power BI"]`</em></td></tr>
+                        <tr><td><code>description</code></td><td>A longer sentence for SEO (Google) and social media link previews. Be descriptive!</td></tr>
+                        <tr><td><code>keywords</code></td><td>A list of keywords for search engines.</td></tr>
+                        <tr><td><code>featuredImage</code></td><td><b>(Required)</b> Path to the image for the project summary card (800x600 recommended).</td></tr>
+                        <tr><td><code>headerImage</code></td><td><b>(Required)</b> Path to the large banner image at the top of the project page (1920x1080 recommended).</td></tr>
+                        <tr><td><code>ogImage</code></td><td><b>(Required)</b> Path to the image for social media sharing (1200x630 recommended).</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -248,38 +223,17 @@
         <details>
             <summary>Post Template (`post-template.md`)</summary>
             <div class="details-content">
-                <p>Use this template for blog posts, tutorials, and articles.</p>
-                <table>
+                 <table>
                     <thead>
-                        <tr>
-                            <th>Key</th>
-                            <th>Description & Example</th>
-                        </tr>
+                        <tr><th>Key</th><th>Description & Example</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><code>title</code></td>
-                            <td><b>(Required)</b> The title of your article.<br><em>Example: "A Beginner's Guide to SQL Joins"</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>summary</code></td>
-                            <td><b>(Required)</b> A short description for the main blog listing page.<br><em>Example: "Understand the differences between INNER, LEFT, RIGHT, and FULL OUTER joins with clear examples and visuals."</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>date</code></td>
-                            <td><b>(Required)</b> The publication date. Use <code>YYYY-MM-DD</code>.<br><em>Example: "2025-09-18"</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>readTime</code></td>
-                            <td><b>(Required)</b> An estimate of how long the article takes to read.<br><em>Example: "8 min read"</em></td>
-                        </tr>
-                        <tr>
-                            <td><code>tags</code></td>
-                            <td><b>(Required)</b> A list of topics related to the article.<br><em>Example: `["SQL", "Databases", "Data Analysis", "Tutorial"]`</em></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><em>The <code>description</code>, <code>keywords</code>, <code>featuredImage</code>, <code>headerImage</code>, and <code>ogImage</code> fields work exactly the same as in the Project Template.</em></td>
-                        </tr>
+                        <tr><td><code>title</code></td><td><b>(Required)</b> The title of your article.</td></tr>
+                        <tr><td><code>summary</code></td><td><b>(Required)</b> Short description for the main blog listing page.</td></tr>
+                        <tr><td><code>date</code></td><td><b>(Required)</b> Publication date. Format: <code>YYYY-MM-DD</code>.</td></tr>
+                        <tr><td><code>readTime</code></td><td><b>(Required)</b> Estimated reading time. Example: "8 min read"</td></tr>
+                        <tr><td><code>tags</code></td><td><b>(Required)</b> A list of topics related to the article. <br><em>Example: `["SQL", "Databases", "Tutorial"]`</em></td></tr>
+                        <tr><td colspan="2"><em>The <code>description</code>, <code>keywords</code>, <code>featuredImage</code>, <code>headerImage</code>, and <code>ogImage</code> fields work the same as in the Project Template.</em></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -287,23 +241,21 @@
     </section>
 
     <section id="markdown-guide">
-        <h2>How to Write Beautiful Markdown</h2>
+        <h2>How to Write Beautiful Markdown Content</h2>
         <p>After the front matter, you write your content using Markdown. It's a simple way to format text that gets converted into HTML.</p>
 
         <details>
             <summary>Headings & Table of Contents</summary>
             <div class="details-content">
                 <h3>Headings</h3>
-                <p>Use hashtags (`#`) to create headings. The number of hashtags corresponds to the heading level. Your article title is automatically Level 1 (`#`), so you should start your content with Level 2 headings (`##`).</p>
-                <pre><code class="language-markdown">## This is a Main Section (h2)
-### This is a Sub-section (h3)
-#### This is a Sub-sub-section (h4)</code></pre>
+                <p>Use hashtags (`#`) for headings. Your article title is Level 1 (`#`), so start your content with Level 2 (`##`).</p>
+                <pre><code class="language-markdown">## Problem Statement
+### Data Cleaning
+#### Handling Missing Values</code></pre>
                 
                 <h3>Table of Contents (TOC)</h3>
-                <p>A TOC is usually generated automatically by your website builder (Eleventy) based on the headings you use. If you need to create one manually, you can use a list with links that point to heading IDs.</p>
-                <p>To create a link to a heading, use `[Link Text](#heading-text)`. The ID is typically the heading text in lowercase with spaces replaced by hyphens.</p>
-                <pre><code class="language-markdown">* [Link to Main Section](#this-is-a-main-section-h2)
-* [Link to Sub-section](#this-is-a-sub-section-h3)</code></pre>
+                <p>Your website builder likely generates a TOC automatically from your headings. To link to a heading manually, convert it to lowercase and replace spaces with hyphens.</p>
+                <pre><code class="language-markdown">* [Go to the Problem Statement](#problem-statement)</code></pre>
             </div>
         </details>
         
@@ -315,10 +267,9 @@
                         <tr><th>Style</th><th>Markdown Syntax</th><th>Rendered Output</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><b>Bold</b></td><td>`**Bold Text**` or `__Bold Text__`</td><td><b>Bold Text</b></td></tr>
-                        <tr><td><i>Italic</i></td><td>`*Italic Text*` or `_Italic Text_`</td><td><i>Italic Text</i></td></tr>
-                        <tr><td><s>Strikethrough</s></td><td>`~~Strikethrough Text~~`</td><td><s>Strikethrough Text</s></td></tr>
-                        <tr><td><b><i>Bold & Italic</i></b></td><td>`***Bold and Italic***`</td><td><b><i>Bold and Italic</i></b></td></tr>
+                        <tr><td><b>Bold</b></td><td>`**Bold Text**`</td><td><b>Bold Text</b></td></tr>
+                        <tr><td><i>Italic</i></td><td>`*Italic Text*`</td><td><i>Italic Text</i></td></tr>
+                        <tr><td><s>Strikethrough</s></td><td>`~~Strikethrough~~`</td><td><s>Strikethrough</s></td></tr>
                         <tr><td><mark>Highlight</mark></td><td>`&lt;mark&gt;Highlight&lt;/mark&gt;`</td><td><mark>Highlight</mark></td></tr>
                     </tbody>
                 </table>
@@ -329,143 +280,115 @@
             <summary>Code Blocks & Snippets</summary>
             <div class="details-content">
                 <h3>Inline Code</h3>
-                <p>For short snippets, variable names, or file names within a sentence, wrap the text in backticks (`` ` ``).</p>
-                <pre><code class="language-markdown">To read a CSV file, use the `pd.read_csv()` function from the `pandas` library.</code></pre>
-                <p><b>Result:</b> To read a CSV file, use the `pd.read_csv()` function from the `pandas` library.</p>
+                <p>For short snippets in a sentence, use single backticks (`` ` ``).</p>
+                <pre><code class="language-markdown">The `df.isnull().sum()` method is useful for finding missing values.</code></pre>
+                <p><b>Result:</b> The `df.isnull().sum()` method is useful for finding missing values.</p>
                 
-                <h3>Fenced Code Blocks</h3>
-                <p>For longer, multi-line code examples, use triple backticks (```` ``` ````). You can specify the language right after the opening backticks for syntax highlighting.</p>
+                <h3>Fenced Code Blocks (Recommended)</h3>
+                <p>For multi-line code, use triple backticks (```` ``` ````) and specify the language for syntax highlighting.</p>
+                <h4>Python Example:</h4>
                 <pre><code class="language-markdown">```python
 import pandas as pd
 
-df = pd.DataFrame({
-    'name': ['Ali', 'Fatima', 'Ahmed'],
-    'age': [28, 34, 29]
-})
+# Load the dataset from a CSV file
+df = pd.read_csv('sales_data.csv')
 
-print(df.describe())
+# Display the first 5 rows to inspect the data
+print(df.head())
 ```</code></pre>
-                <p>You can also use `sql`, `javascript`, `html`, `css`, etc.</p>
+                <h4>SQL Example:</h4>
+                <pre><code class="language-markdown">```sql
+SELECT
+    product_category,
+    SUM(sales_amount) AS total_sales,
+    AVG(customer_rating) AS avg_rating
+FROM
+    sales_records
+WHERE
+    sale_date >= '2025-01-01'
+GROUP BY
+    product_category
+ORDER BY
+    total_sales DESC;
+```</code></pre>
             </div>
         </details>
 
-        <details>
-            <summary>Links & Images</summary>
+        <details open>
+            <summary>Links & Images (In Content)</summary>
             <div class="details-content">
                 <h3>Links</h3>
-                <p>You can create links in two ways.</p>
-                <p><b>1. Inline Links (Most Common):</b></p>
-                <pre><code class="language-markdown">[This is a link to Google](https://www.google.com)</code></pre>
-                <p><b>Result:</b> <a href="[https://www.google.com](https://www.google.com)">This is a link to Google</a></p>
+                <p>Create links using the `[Text to display](URL)` format.</p>
+                <pre><code class="language-markdown">[View the dataset on Kaggle](https://www.kaggle.com/datasets/example)</code></pre>
                 
-                <p><b>2. Reference Links (Placeholders):</b></p>
-                <p>This is useful for keeping your paragraphs clean if you have many long URLs. Define the URL "placeholder" at the bottom of your file.</p>
-                <pre><code class="language-markdown">I use pandas for data manipulation. You can find its documentation [here][pandas-docs]. For visualization, I prefer [Seaborn][seaborn-home].
-
-[pandas-docs]: [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
-[seaborn-home]: [https://seaborn.pydata.org/](https://seaborn.pydata.org/)</code></pre>
+                <hr>
 
                 <h3>Images</h3>
-                <p>The syntax is similar to links, but with a `!` at the beginning.</p>
-                <pre><code class="language-markdown">![This is the alt text for the image](/path/to/your/image.jpg "Optional Title Text")</code></pre>
-                <p><b>Alt text</b> is crucial for accessibility and SEO. It describes the image for screen readers and search engines.</p>
+                <p>To embed an image in your content (like a chart or diagram), the syntax is `![Alt Text](Path to Image)`. This is different from the images in the front matter, which are used for the page layout.</p>
+                
+                <pre><code class="language-markdown">![Sales Distribution by Product Category](/img/projects/market-trend/sales-chart.png "Sales Distribution Chart")</code></pre>
+                
+                <ul>
+                    <li><code>!</code>: Tells Markdown this is an image.</li>
+                    <li><code>[Alt Text]</code>: <b>Crucial for accessibility and SEO.</b> Describe the image for screen readers and search engines (e.g., "Bar chart showing sales distribution across electronics, clothing, and groceries").</li>
+                    <li><code>(Path to Image)</code>: The URL to your image. This should be a path relative to the root of your site. For a project called "market-trend", your images should be in a folder like `/img/projects/market-trend/`.</li>
+                     <li><code>"Optional Title"</code>: Text that appears when a user hovers over the image.</li>
+                </ul>
             </div>
         </details>
 
         <details>
-            <summary>Lists (Unordered, Ordered, and Task Lists)</summary>
+            <summary>Lists (Unordered, Ordered, and Task)</summary>
             <div class="details-content">
-                <h3>Unordered List</h3>
-                <p>Use `*`, `-`, or `+` for bullet points.</p>
-                <pre><code class="language-markdown">* Item 1
-* Item 2
-  * Sub-item 2.1
-  * Sub-item 2.2</code></pre>
-                
                 <h3>Ordered List</h3>
-                <p>Use numbers followed by a period.</p>
-                <pre><code class="language-markdown">1. First step: Clean the data
-2. Second step: Explore the data
-3. Third step: Build the model</code></pre>
+                <pre><code class="language-markdown">1. First, I cleaned the data.
+2. Second, I performed exploratory data analysis (EDA).
+3. Finally, I visualized the results in Power BI.</code></pre>
 
                 <h3>Task List</h3>
-                <p>Create a checklist. The `[x]` marks an item as complete.</p>
-                <pre><code class="language-markdown">- [x] Import necessary libraries
-- [x] Load the dataset
-- [ ] Perform feature engineering</code></pre>
+                <pre><code class="language-markdown">- [x] Import libraries and data
+- [x] Handle missing values
+- [ ] Create visualizations</code></pre>
             </div>
         </details>
 
         <details>
-            <summary>Blockquotes & Callouts</summary>
+            <summary>Blockquotes, Callouts & Rules</summary>
             <div class="details-content">
-                <p>Use the `>` character to create a blockquote, which is great for quoting text or creating styled "callout" boxes for notes or warnings.</p>
-                <pre><code class="language-markdown">> "The goal is to turn data into information, and information into insight."
-> - Carly Fiorina</code></pre>
-                <p><b>Result:</b></p>
-                <blockquote>"The goal is to turn data into information, and information into insight." - Carly Fiorina</blockquote>
+                <h3>Blockquotes</h3>
+                <p>Use `>` for quoting text.</p>
+                <pre><code class="language-markdown">> The key insight from the analysis was that customer retention directly correlates with product rating, not price.</code></pre>
+
+                <h3>Callouts</h3>
+                <p>Combine blockquotes with emojis and bold text to create styled notes that draw attention.</p>
+                 <pre><code class="language-markdown">> ℹ️ **Note:** The dataset spans from January 2024 to January 2025.
+
+> ⚠️ **Warning:** Be sure to normalize the data before applying this machine learning model.
+
+> 💡 **Tip:** Using `seaborn.pairplot()` is a quick way to visualize relationships between all variables in your dataframe.</code></pre>
+                <p><b>Results:</b></p>
+                <blockquote>ℹ️ <b>Note:</b> The dataset spans from January 2024 to January 2025.</blockquote>
+                <blockquote>⚠️ <b>Warning:</b> Be sure to normalize the data before applying this machine learning model.</blockquote>
                 
-                <p>You can create stylish callouts by adding an emoji and bold text.</p>
-                <pre><code class="language-markdown">> ℹ️ **Note:** Always check for missing values (`NaN`) before performing any calculations on a column.</code></pre>
-                <p><b>Result:</b></p>
-                <blockquote>ℹ️ <b>Note:</b> Always check for missing values (<code>NaN</code>) before performing any calculations on a column.</blockquote>
+                <h3>Horizontal Rules</h3>
+                <p>To create a thematic break or a horizontal line, use three or more hyphens, asterisks, or underscores on a new line.</p>
+                <pre><code class="language-markdown">---</code></pre>
+                <hr>
             </div>
         </details>
-
+        
         <details>
             <summary>Tables</summary>
             <div class="details-content">
-                <p>Creating tables can be tedious, but they are great for presenting structured data. Use pipes `|` to separate columns and hyphens `-` to create the header row separator.</p>
+                <p>Use pipes `|` and hyphens `-` to create tables. They are perfect for feature descriptions or result summaries.</p>
                 <pre><code class="language-markdown">| Feature         | Data Type | Description                              |
 |-----------------|-----------|------------------------------------------|
 | `age`           | integer   | The age of the customer in years.        |
 | `income`        | float     | Annual income of the customer.           |
 | `gender`        | object    | Gender of the customer ('Male'/'Female').|</code></pre>
-                <p><b>Result:</b></p>
-                <table>
-                    <thead><tr><th>Feature</th><th>Data Type</th><th>Description</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>age</code></td><td>integer</td><td>The age of the customer in years.</td></tr>
-                        <tr><td><code>income</code></td><td>float</td><td>Annual income of the customer.</td></tr>
-                        <tr><td><code>gender</code></td><td>object</td><td>Gender of the customer ('Male'/'Female').</td></tr>
-                    </tbody>
-                </table>
             </div>
         </details>
         
-        <details>
-            <summary>Animations & Interactive Content</summary>
-            <div class="details-content">
-                <p>Markdown itself does not support animations. However, you can embed HTML directly in your file. The `<details>` and `<summary>` tags are perfect for creating simple, interactive "click to reveal" sections.</p>
-                 <pre><code class="language-html">&lt;details&gt;
-  &lt;summary&gt;Click to see the SQL Query&lt;/summary&gt;
-  &lt;pre&gt;&lt;code class="language-sql"&gt;
-SELECT 
-    department,
-    COUNT(employee_id) AS number_of_employees
-FROM 
-    employees
-GROUP BY 
-    department
-ORDER BY 
-    number_of_employees DESC;
-  &lt;/code&gt;&lt;/pre&gt;
-&lt;/details&gt;</code></pre>
-                <p><b>Result:</b></p>
-                <details>
-                    <summary>Click to see the SQL Query</summary>
-                    <pre><code class="language-sql">SELECT 
-    department,
-    COUNT(employee_id) AS number_of_employees
-FROM 
-    employees
-GROUP BY 
-    department
-ORDER BY 
-    number_of_employees DESC;</code></pre>
-                </details>
-            </div>
-        </details>
 
     </section>
 
@@ -474,7 +397,6 @@ ORDER BY
     const themeToggle = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
-    // Check for saved theme in localStorage
     if (localStorage.getItem('theme') === 'dark') {
         htmlEl.classList.add('dark');
         themeToggle.textContent = '☀️';
@@ -492,8 +414,7 @@ ORDER BY
     });
 
     // --- Copy Code Button ---
-    const allPres = document.querySelectorAll('pre');
-    allPres.forEach(pre => {
+    document.querySelectorAll('pre').forEach(pre => {
         const code = pre.querySelector('code');
         if (code) {
             const copyButton = document.createElement('button');
@@ -502,14 +423,11 @@ ORDER BY
             pre.appendChild(copyButton);
 
             copyButton.addEventListener('click', () => {
-                const textToCopy = code.innerText;
-                navigator.clipboard.writeText(textToCopy).then(() => {
+                navigator.clipboard.writeText(code.innerText).then(() => {
                     copyButton.textContent = 'Copied!';
                     setTimeout(() => {
                         copyButton.textContent = 'Copy';
                     }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
                 });
             });
         }
