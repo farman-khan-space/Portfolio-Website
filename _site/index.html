@@ -38,8 +38,9 @@
     <link rel="manifest" href="/img/favicons/site.webmanifest">
     <meta name="msapplication-TileColor" content="#b91c1c">
     <meta name="theme-color" content="#ffffff">
+   
     <script>
-        // This script prevents a flash of the wrong theme on page load.
+        // This script prevents a flash of the wrong theme on page load. It must stay in the <head>.
         (function () {
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
@@ -56,6 +57,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- ADD THE AOS CSS FILE HERE -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body class="bg-background text-foreground font-sans">
@@ -64,7 +68,7 @@
     
     
 
-<header class="fixed top-0 left-0 w-full z-50 border-b border-primary/10  bg-background/0 dark:bg-background/0 backdrop-blur-sm transition-all duration-700 ease-in-out">
+<header class="fixed top-0 left-0 w-full z-50 border-b border-primary/10  bg-background/50 dark:bg-background/50 backdrop-blur-lg transition-all duration-700 ease-in-out">
     <div class="container mx-auto px-6 max-w-7xl">
         <div class="flex justify-between items-center h-20">
             <a href="/" aria-label="Farman Khan Home" class="group">
@@ -193,7 +197,7 @@
     </div>
     <div class="absolute inset-0 bg-background opacity-90 dark:bg-background dark:opacity-90 z-[-1]"></div>
 
-    <div class="container mx-auto relative z-10">
+    <div class="container mx-auto relative z-10" data-aos="fade-in">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Farman Khan</h1>
         <p class="font-heading mt-3 text-xl md:text-2xl font-medium text-primary">Data Analyst & Storyteller</p>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Transforming complex data into actionable insights and compelling narratives.</p>
@@ -208,7 +212,7 @@
 
 <section class="bg-background py-20  border-b border-primary/10">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-in">
             <h2 class="font-heading text-3xl font-bold text-foreground">Recent Projects</h2>
             <p class="mt-2 text-lg text-foreground-muted">A selection of my latest data-driven work.</p>
         </div>
@@ -218,6 +222,7 @@
             
             
             <div
+                data-aos="fade-up" data-aos-delay="0"
                 class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
                     <picture><source type="image/webp" srcset="/img/optimized/market-trend-card-400w.webp 400w, /img/optimized/market-trend-card-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/optimized/market-trend-card-400w.jpeg 400w, /img/optimized/market-trend-card-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" src="/img/optimized/market-trend-card-400w.jpeg" width="800" height="600"></picture>
@@ -255,7 +260,7 @@
             
 
         </div>
-        <div class="text-center mt-16">
+        <div class="text-center mt-16" data-aos="fade-up">
             <a href="/portfolio/"
                 class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
                 View All Projects
@@ -266,7 +271,7 @@
 
 <section class="bg-background py-20">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-in">
             <h2 class="font-heading text-3xl font-bold text-foreground">Latest from the Blog</h2>
             <p class="mt-2 text-lg text-foreground-muted">My recent thoughts on data, analytics, and storytelling.</p>
         </div>
@@ -276,9 +281,10 @@
             
             
             <div
+                data-aos="fade-up" data-aos-delay="0"
                 class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
                 <div class="overflow-hidden rounded">
-                    <picture><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w, /img/optimized/article-1-card-800w.webp 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><source type="image/jpeg" srcset="/img/optimized/article-1-card-400w.jpeg 400w, /img/optimized/article-1-card-800w.jpeg 800w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="800" height="600"></picture>
+                    <picture><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="400" height="533"></picture>
                 </div>
                 <div class="p-6 flex-grow">
                     <p class="text-sm text-foreground-muted mb-2">August 30, 2025 • </p>
@@ -304,15 +310,91 @@
                     </div>
                     
                 </div>
-                <a href="/posts/my-first-post/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
+                <a href="/posts/my-first-post - Copy (2)/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
                     Read Article
                 </a>
             </div>
             
             
+            
+            <div
+                data-aos="fade-up" data-aos-delay="100"
+                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+                <div class="overflow-hidden rounded">
+                    <picture><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="400" height="533"></picture>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-sm text-foreground-muted mb-2">August 30, 2025 • </p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">Market Trend Analysis</h3>
+                    <p class="text-foreground-muted mb-6">Analyzed sales data to identify key market trends and provide actionable growth strategies</p>
+
+                    
+                    
+                    <div class="my-4 flex flex-wrap gap-2">
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            SQL
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Python
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Power BI
+                        </span>
+                        
+                    </div>
+                    
+                </div>
+                <a href="/posts/my-first-post - Copy - Copy/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
+                    Read Article
+                </a>
+            </div>
+            
+            
+            
+            <div
+                data-aos="fade-up" data-aos-delay="200"
+                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
+                <div class="overflow-hidden rounded">
+                    <picture><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-52 object-cover" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="400" height="533"></picture>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-sm text-foreground-muted mb-2">August 30, 2025 • </p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">Market Trend Analysis</h3>
+                    <p class="text-foreground-muted mb-6">Analyzed sales data to identify key market trends and provide actionable growth strategies</p>
+
+                    
+                    
+                    <div class="my-4 flex flex-wrap gap-2">
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            SQL
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Python
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Power BI
+                        </span>
+                        
+                    </div>
+                    
+                </div>
+                <a href="/posts/my-first-post - Copy/" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
+                    Read Article
+                </a>
+            </div>
+            
+            
+            
+            
 
         </div>
-        <div class="text-center mt-16">
+        <div class="text-center mt-16" data-aos="fade-up">
             <a href="/blog/"
                 class="inline-block bg-accent text-primary font-medium py-3 px-8 rounded border border-primary hover:bg-primary hover:text-white transition-colors duration-theme">
                 View All Posts
@@ -320,6 +402,7 @@
         </div>
     </div>
 </section>
+
     </main>
 
     <footer class="bg-accent border-t border-accent/50">
@@ -374,6 +457,24 @@
                     </li>
                     
                     
+                    
+                    <li>
+                        <a href="/posts/my-first-post - Copy/" class="hover:text-primary transition-colors">
+                            Market Trend Analysis
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/posts/my-first-post - Copy - Copy/" class="hover:text-primary transition-colors">
+                            Market Trend Analysis
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
                 </ul>
             </div>
 
@@ -406,108 +507,9 @@
 
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    <script src="/js/main.js" defer></script>
 
-            // --- Theme Toggle Logic ---
-            const initializeTheme = () => {
-                const toggleButton = document.getElementById('theme-toggle-floating');
-                if (!toggleButton) return;
-
-                toggleButton.addEventListener('click', () => {
-                    const isDark = document.documentElement.classList.toggle('dark');
-                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                });
-            };
-
-            // --- Mobile Menu Logic ---
-            const initializeMobileMenu = () => {
-                const toggleButton = document.getElementById('menu-toggle');
-                const mobileMenu = document.getElementById('mobile-menu');
-                const openIcon = document.getElementById('menu-icon-open');
-                const closeIcon = document.getElementById('menu-icon-close');
-
-                if (!toggleButton || !mobileMenu) return;
-
-                toggleButton.addEventListener('click', () => {
-                    const isVisible = mobileMenu.classList.contains('visible');
-                    if (isVisible) {
-                        mobileMenu.classList.add('opacity-0', 'invisible');
-                        mobileMenu.classList.remove('opacity-100', 'visible');
-                        document.body.style.overflow = '';
-                        openIcon.classList.remove('hidden');
-                        closeIcon.classList.add('hidden');
-                    } else {
-                        mobileMenu.classList.remove('opacity-0', 'invisible');
-                        mobileMenu.classList.add('opacity-100', 'visible');
-                        document.body.style.overflow = 'hidden';
-                        openIcon.classList.add('hidden');
-                        closeIcon.classList.remove('hidden');
-                    }
-                });
-            };
-
-            // --- Scroll to Top Logic ---
-            const initializeScrollToTop = () => {
-                const btn = document.getElementById('scroll-to-top');
-                if (!btn) return;
-
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 500) {
-                        btn.classList.add('opacity-100', 'visible');
-                        btn.classList.remove('opacity-0', 'invisible');
-                    } else {
-                        btn.classList.remove('opacity-100', 'visible');
-                        btn.classList.add('opacity-0', 'invisible');
-                    }
-                });
-
-                btn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            };
-
-            // --- Reading Progress Bar Logic ---
-            const initializeReadingProgress = () => {
-                const progressBar = document.getElementById('progress-bar');
-                if (!progressBar) return;
-
-                const updateProgress = () => {
-                    const contentElement = document.querySelector('article');
-                    if (!contentElement) {
-                        progressBar.style.width = '0%';
-                        return;
-                    }
-                    const totalHeight = contentElement.scrollHeight - window.innerHeight;
-                    const progress = (window.scrollY / totalHeight) * 100;
-                    progressBar.style.width = `${Math.min(progress, 100)}%`;
-                };
-
-                window.addEventListener('scroll', updateProgress);
-                updateProgress();
-            };
-
-            // --- Sticky Header Logic ---
-            const initializeStickyHeader = () => {
-                const header = document.querySelector('header');
-                if (!header) return;
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 10) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                });
-            };
-            
-            // --- Initialize All Scripts ---
-            initializeTheme(); 
-            initializeMobileMenu(); 
-            initializeScrollToTop();
-            initializeReadingProgress();
-            initializeStickyHeader();
-        });
-    </script>
+    <!-- ADD THE AOS SCRIPT FILE HERE -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 </html>
-
