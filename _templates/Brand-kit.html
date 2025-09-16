@@ -6,7 +6,7 @@
     <title>Brand Guide - datamakingsense.space</title>
     <style>
         /* --- Google Fonts Import --- */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;700&display=swap');
 
         /* --- Basic Styles & Variables --- */
         :root {
@@ -16,6 +16,7 @@
             --color-dark-bg: #17181C;
             --color-light-text: #0C0A09;
             --color-dark-text: #E7E7E2;
+            --primary-red: #B91C1C;
         }
 
         body {
@@ -38,73 +39,74 @@
         }
 
         /* --- Typography Styles --- */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: var(--font-heading);
             font-weight: 700;
             margin-bottom: 0.5em;
         }
-        h1 { font-size: 2.5rem; color: #B91C1C; }
+        h1 { font-size: 2.5rem; color: var(--primary-red); }
         h2 { font-size: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem; }
         h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; margin-top: 1.5rem; color: #333; }
+        p, li { max-width: 70ch; }
+        code {
+            background-color: #eee;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: monospace;
+        }
 
-        /* --- Color Palette Styles --- */
-        .color-grid {
+        /* --- Utility & Demo Styles --- */
+        .demo-box {
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
+
+        /* --- Color Palette Styles --- */
         .color-card {
             border: 1px solid #e5e5e5;
             border-radius: 8px;
             overflow: hidden;
             text-align: center;
         }
-        .color-swatch {
-            height: 100px;
-        }
-        .color-info {
-            padding: 1rem;
-            background-color: #fafafa;
-        }
-        .color-name {
-            font-weight: 500;
-            margin: 0;
-        }
-        .color-hex {
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0.25rem 0 0;
-        }
+        .color-swatch { height: 100px; }
+        .color-info { padding: 1rem; background-color: #fafafa; }
+        .color-name { font-weight: 500; margin: 0; }
+        .color-hex { font-family: monospace; font-size: 0.9rem; color: #555; margin: 0.25rem 0 0; }
 
-        /* --- Typography Demo Styles --- */
-        .font-demo {
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-top: 1.5rem;
+        /* --- Component Demo Styles --- */
+        .btn {
+            display: inline-block;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .font-demo .heading-font-demo {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-top: 0;
+        .btn:hover { transform: scale(1.05); }
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+            box-shadow: 0 4px 15px rgba(185, 28, 28, 0.2);
         }
-        .font-demo .body-font-demo {
-            font-family: var(--font-body);
-            max-width: 65ch; /* Optimal line length for reading */
+        .btn-secondary {
+            background-color: #F5F5F4;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
         }
 
         /* --- Print Styles --- */
         @media print {
-            body {
-                padding: 0;
-                background-color: #ffffff;
-            }
-            .container {
-                box-shadow: none;
-                padding: 1rem;
-            }
+            body { padding: 0; background-color: #ffffff; }
+            .container { box-shadow: none; padding: 1rem; }
             h1 { color: #000000; }
         }
     </style>
@@ -118,101 +120,132 @@
         </header>
 
         <main>
+            <section id="mission">
+                <h2>Mission & Tone of Voice</h2>
+                <p>The brand's mission is to transform complex data into actionable insights and compelling narratives. We aim to make data "speak" in a way that is clear, accessible, and impactful for any audience.</p>
+                <h4>Tone of Voice</h4>
+                <ul>
+                    <li><strong>Professional & Insightful:</strong> Content should be well-researched, accurate, and demonstrate expertise.</li>
+                    <li><strong>Clear & Accessible:</strong> Avoid jargon. Explain complex topics simply. The goal is to empower, not confuse.</li>
+                    <li><strong>Story-driven:</strong> Frame data analysis as a narrative. Every dataset has a story to tell.</li>
+                </ul>
+            </section>
+            
+            <section id="logo">
+                <h2>Logo</h2>
+                <p>The primary logo consists of a stylized lightbulb icon with a bar chart inside, representing an "insight" or "idea" derived from data. It is paired with the logotype "datamakingsense.space".</p>
+                <h4>Usage</h4>
+                <ul>
+                    <li>The full logo should be used whenever possible, especially in headers and official documents.</li>
+                    <li>The standalone lightbulb icon can be used as a favicon or social media profile picture.</li>
+                    <li>Ensure sufficient clear space around the logo. Do not stretch or alter its proportions.</li>
+                </ul>
+            </section>
+
             <section id="colors">
                 <h2>Color Palette</h2>
-                
+                <p>The color palette is built on a sharp, minimalist "Kyoto Ink" theme, emphasizing clarity and professionalism with a strong primary accent for calls to action.</p>
                 <h3>Light Mode</h3>
-                <div class="color-grid">
+                <div class="grid">
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #F7F7F7;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Stone White (Background)</p>
-                            <p class="color-hex">#F7F7F7</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Stone White (BG)</p><p class="color-hex">#F7F7F7</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #0C0A09;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Ink Black (Text)</p>
-                            <p class="color-hex">#0C0A09</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Ink Black (Text)</p><p class="color-hex">#0C0A09</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #57534E;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Warm Slate (Muted Text)</p>
-                            <p class="color-hex">#57534E</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Warm Slate (Muted)</p><p class="color-hex">#57534E</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #B91C1C;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Tori Red (Primary)</p>
-                            <p class="color-hex">#B91C1C</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Tori Red (Primary)</p><p class="color-hex">#B91C1C</p></div>
                     </div>
                      <div class="color-card">
                         <div class="color-swatch" style="background-color: #F5F5F4;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Paper White (Accent)</p>
-                            <p class="color-hex">#F5F5F4</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Paper White (Accent)</p><p class="color-hex">#F5F5F4</p></div>
                     </div>
                 </div>
 
                 <h3>Dark Mode</h3>
-                <div class="color-grid">
+                <div class="grid">
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #17181C;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Charcoal Black (Background)</p>
-                            <p class="color-hex">#17181C</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Charcoal (BG)</p><p class="color-hex">#17181C</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #E7E7E2;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Bone White (Text)</p>
-                            <p class="color-hex">#E7E7E2</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Bone White (Text)</p><p class="color-hex">#E7E7E2</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #82827D;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Washed Stone (Muted Text)</p>
-                            <p class="color-hex">#82827D</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Washed Stone (Muted)</p><p class="color-hex">#82827D</p></div>
                     </div>
                     <div class="color-card">
                         <div class="color-swatch" style="background-color: #DC2626;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Vibrant Red (Primary)</p>
-                            <p class="color-hex">#DC2626</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Vibrant Red (Primary)</p><p class="color-hex">#DC2626</p></div>
                     </div>
                      <div class="color-card">
                         <div class="color-swatch" style="background-color: #212328;"></div>
-                        <div class="color-info">
-                            <p class="color-name">Dark Slate (Accent)</p>
-                            <p class="color-hex">#212328</p>
-                        </div>
+                        <div class="color-info"><p class="color-name">Dark Slate (Accent)</p><p class="color-hex">#212328</p></div>
                     </div>
                 </div>
             </section>
 
             <section id="typography">
                 <h2>Typography</h2>
-                
-                <div class="font-demo">
-                    <h3>Heading Font: Poppins</h3>
-                    <p class="heading-font-demo">Market Trend Analysis</p>
-                    <p>Used for all main headings (h1, h2, h3) to provide a bold, modern, and professional feel.</p>
+                <div class="demo-box">
+                    <h3>Heading Font: Poppins (Bold)</h3>
+                    <p style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700;">Market Trend Analysis</p>
+                    <p>Used for all main headings (h1, h2, h3) to provide a bold, modern, and professional feel. It should always be used in a heavy weight (700).</p>
                 </div>
-
-                <div class="font-demo">
+                <div class="demo-box">
                     <h3>Body Font: Inter</h3>
-                    <p class="body-font-demo">This is the body text, used for paragraphs and other general content. Inter is a clean, highly readable sans-serif font that works beautifully for longer-form text, ensuring a comfortable reading experience for users on any device.</p>
+                    <p style="font-family: var(--font-body); max-width: 65ch;">This is the body text, used for paragraphs and other general content. Inter is a clean, highly readable sans-serif font that works beautifully for longer-form text, ensuring a comfortable reading experience for users on any device.</p>
                 </div>
+            </section>
+
+            <section id="components">
+                <h2>UI Components</h2>
+                <p>Reusable components form the building blocks of the website, ensuring a consistent user experience.</p>
+                <div class="demo-box">
+                    <h4>Buttons</h4>
+                    <p>Buttons are used for primary calls to action. They should be distinct and provide clear feedback on hover and active states.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center;">
+                        <a href="#" class="btn btn-primary">Primary Button</a>
+                        <a href="#" class="btn btn-secondary">Secondary Button</a>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <h4>Cards</h4>
+                    <p>Cards are used to display summarized content for projects and blog posts. They use a `card-glass` and `bg-noise` style for a subtle texture. On hover, the card flips to reveal more details.</p>
+                    <p>The card container has a minimum height of <code>450px</code> to ensure consistency across the grid.</p>
+                </div>
+            </section>
+
+            <section id="imagery">
+                <h2>Imagery & Icons</h2>
+                <h4>Card Images</h4>
+                <p>Images for project and blog cards are crucial for visual appeal. To maintain consistency and avoid distortion in the flip-card component, all card images should adhere to a specific aspect ratio.</p>
+                <ul>
+                    <li><strong>Aspect Ratio:</strong> 3:4 (Portrait)</li>
+                    <li><strong>Recommended Resolution:</strong> 1200px wide by 1600px tall.</li>
+                    <li><strong>Content:</strong> The most important visual elements should be centered to ensure they remain visible on all screen sizes.</li>
+                </ul>
+                <h4>Icons</h4>
+                <p>The website uses the <strong>Bootstrap Icons</strong> library for functional icons like the mobile menu toggle. Icons should be used sparingly and consistently.</p>
+            </section>
+            
+            <section id="interactivity">
+                <h2>Animation & Interactivity</h2>
+                <p>Subtle animations are used to enhance the user experience without being distracting. The primary library used is <strong>AOS (Animate on Scroll)</strong>.</p>
+                <ul>
+                    <li><strong>Page Load:</strong> Most content sections use a subtle <code>fade-up</code> or <code>fade</code> effect to reveal themselves as the user scrolls.</li>
+                    <li><strong>Card Hover:</strong> Project and blog cards use a CSS-only 3D flip animation to reveal details on the back.</li>
+                    <li><strong>Smooth Scroll:</strong> All on-page anchor links (e.g., in a table of contents) scroll smoothly to their destination. This is enabled with <code>scroll-behavior: smooth;</code>.</li>
+                </ul>
             </section>
         </main>
     </div>
