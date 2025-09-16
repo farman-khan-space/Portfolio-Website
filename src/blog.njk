@@ -5,7 +5,7 @@ permalink: /blog/
 ---
 
 <section class="text-center py-24 lg:py-32 px-6 bg-accent   border-b border-primary/10">
-    <div class="container mx-auto">
+    <div class="container mx-auto" data-aos="fade-up">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Data & Insights</h1>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Writing about data analysis, visualization techniques, and the stories hidden within the numbers.</p>
     </div>
@@ -16,31 +16,41 @@ permalink: /blog/
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
             {% for post in collections.posts %}
-            <div
-                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-                <div class="overflow-hidden rounded">
-                    {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-52 object-cover" %}
-                </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date | readableDate }} • {{ post.data.readTime }}</p>
-                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
-                    <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
-
-                    {# This block checks if tags exist and then loops through them #}
-                    {% if post.data.tags %}
-                    <div class="my-4 flex flex-wrap gap-2">
-                        {% for tag in post.data.tags %}
-                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
-                            {{ tag }}
-                        </span>
-                        {% endfor %}
+            <div class="flip-card group" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="flip-card-inner">
+                    <!-- FRONT OF CARD -->
+                    <div class="flip-card-front">
+                         <div class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 h-full">
+                            <div class="overflow-hidden rounded h-full">
+                                {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-full object-cover" %}
+                            </div>
+                        </div>
                     </div>
-                    {% endif %}
+                    <!-- BACK OF CARD -->
+                    <div class="flip-card-back">
+                        <div class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 h-full flex flex-col">
+                            <div class="p-6 flex-grow flex flex-col justify-center">
+                                <p class="text-sm text-foreground-muted mb-2">{{ post.data.date | readableDate }} • {{ post.data.readTime }}</p>
+                                <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
+                                <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
+
+                                {% if post.data.tags %}
+                                <div class="my-4 flex flex-wrap gap-2 justify-center">
+                                    {% for tag in post.data.tags %}
+                                    <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                                        {{ tag }}
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            <a href="{{ post.url | url }}"
+                                class="font-medium text-primary hover:font-bold hover:underline self-center px-6 pb-6">
+                                Read Article
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a href="{{ post.url | url }}"
-                    class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
-                    Read Article
-                </a>
             </div>
             {% else %}
             <p class="md:col-span-2 lg:col-span-3 text-center text-foreground-muted">No posts have been written yet. Please check back soon!</p>
@@ -49,3 +59,4 @@ permalink: /blog/
         </div>
     </div>
 </section>
+
