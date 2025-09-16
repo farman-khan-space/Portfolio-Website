@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Workflow Guide</title>
+    <style>
+        /* --- Google Fonts & Font Awesome Icons --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap');
+
+        /* --- Style Variables (from your brand kit) --- */
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-bg: #17181C; /* Charcoal Black */
+            --color-surface: #212328; /* Dark Slate */
+            --color-text: #E7E7E2; /* Bone White */
+            --color-text-muted: #82827D; /* Washed Stone */
+            --color-primary: #DC2626; /* Vibrant Red */
+            --color-border: rgba(231, 231, 226, 0.1);
+        }
+
+        /* --- Base Styles --- */
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 2rem 1rem;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* --- Layout & Container --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--color-text);
+        }
+        header p {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* --- Accordion Styles --- */
+        .accordion-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        .accordion-header {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            padding: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--color-text);
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .accordion-header:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .accordion-header .icon {
+            transition: transform 0.3s ease-in-out;
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+        .accordion-item.active .accordion-header .icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        }
+        .accordion-content-inner {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        /* --- Content & Code Block Styles --- */
+        .accordion-content ul {
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+        .accordion-content li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .accordion-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+        .code-block-wrapper {
+            position: relative;
+            margin: 1rem 0;
+        }
+        pre {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            border-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Portfolio Workflow Guide</h1>
+            <p>Your complete guide to setting up, developing, and deploying the website.</p>
+        </header>
+
+        <main id="workflow-accordion">
+
+            <!-- Section 1: Initial Setup -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>1. Initial Setup on a New PC/Laptop</span>
+                    <span class="icon">?</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li>Install Node.js: <a href="https://nodejs.org" target="_blank" style="color: var(--color-primary);">nodejs.org</a></li>
+                            <li>Install Git: <a href="https://git-scm.com" target="_blank" style="color: var(--color-primary);">git-scm.com</a></li>
+                        </ul>
+                        <div class="code-block-wrapper">
+                            <pre><code>npm install -g netlify-cli</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="code-block-wrapper">
+                            <pre><code>git clone &lt;your-repo-url&gt;</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <div class="code-block-wrapper">
+                            <pre><code>cd Portfolio-Website
+npm install</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Local Development -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>2. Local Development</span>
+                    <span class="icon">?</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>For a fast, lightweight server focused only on Eleventy:</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>npx @11ty/eleventy --serve</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <p>To fully simulate the Netlify environment (including forms, redirects):</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>netlify dev</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <ul>
+                            <li>Eleventy dev server runs at: <code>http://localhost:8080</code></li>
+                            <li>Netlify dev server runs at: <code>http://localhost:8888</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Daily Workflow -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>3. Daily Workflow</span>
+                    <span class="icon">?</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <ul>
+                            <li>Edit your files inside the <code>src/</code> directory.</li>
+                            <li>Check changes locally using <code>npx @11ty/eleventy --serve</code>.</li>
+                            <li>Test any Netlify-specific features with <code>netlify dev</code>.</li>
+                            <li>Commit and push your changes to GitHub:</li>
+                        </ul>
+                        <div class="code-block-wrapper">
+                            <pre><code>git add .
+git commit -m "Your descriptive message"
+git push</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW Section 4: Automated Committing -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>4. Automated Committing (Advanced)</span>
+                    <span class="icon">?</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>To commit every changed file individually, you can use this script. Create a file named <code>git-commit-all.sh</code> in your project's root folder.</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>#!/bin/bash
+git status --porcelain | while read -r line; do
+  status=$(echo "$line" | awk '{print $1}')
+  file=$(echo "$line" | awk '{print $2}')
+  commit_message=""
+  case "$status" in
+    "M") commit_message="style: Update ${file}";;
+    "A") commit_message="feat: Add ${file}";;
+    "??") commit_message="feat: Add untracked file ${file}";;
+    "D") commit_message="fix: Remove ${file}";;
+    *) continue;;
+  esac
+  echo "Staging -> ${file}"
+  git add "$file"
+  echo "Committing -> ${commit_message}"
+  git commit -m "$commit_message"
+  echo "-----------------------------------"
+done
+echo "All files have been committed individually."</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <p><strong>How to use on Windows:</strong></p>
+                         <ul>
+                            <li>Right-click in your project folder and select "Git Bash Here".</li>
+                            <li>Make the script executable (only needs to be done once):</li>
+                        </ul>
+                         <div class="code-block-wrapper">
+                            <pre><code>chmod +x git-commit-all.sh</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <ul>
+                            <li>Run the script to commit all files:</li>
+                        </ul>
+                        <div class="code-block-wrapper">
+                            <pre><code>./git-commit-all.sh</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Deploying to Netlify -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>5. Deploying to Netlify</span>
+                    <span class="icon">?</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>To manually build and deploy your site from the command line:</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>npx @11ty/eleventy
+netlify deploy --prod --dir=_site --build false</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <p>For a faster workflow, add this script to your <code>package.json</code>:</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>"scripts": {
+  "publish": "npx @11ty/eleventy && netlify deploy --prod --dir=_site --build false"
+}</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <p>Now you can just run one command to deploy:</p>
+                        <div class="code-block-wrapper">
+                            <pre><code>npm run publish</code></pre>
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordion = document.getElementById('workflow-accordion');
+
+            // Accordion functionality
+            accordion.addEventListener('click', (e) => {
+                const header = e.target.closest('.accordion-header');
+                if (!header) return;
+
+                const item = header.parentElement;
+                const content = header.nextElementSibling;
+
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle the clicked item
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+
+            // Copy-to-clipboard functionality
+            accordion.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('copy-btn')) return;
+
+                const button = e.target;
+                const code = button.previousElementSibling.querySelector('code').innerText;
+
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = button.innerText;
+                    button.innerText = 'Copied!';
+                    setTimeout(() => {
+                        button.innerText = originalText;
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
