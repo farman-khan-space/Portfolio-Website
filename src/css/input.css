@@ -227,10 +227,33 @@ header.scrolled {
   @apply border-b border-primary/20 bg-background/65 dark:bg-background/65 shadow-2xl;
 }
 
+  /* --- CORRECTED: Flip Card Animation --- */
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Set 3D perspective */
+    min-height: 450px; /* Adjust this height to match your card content */
+  }
 
+  .flip-card-inner {
+    @apply relative w-full h-full text-center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; /* SMOOTHER DURATION */
+    transition-timing-function: ease-in-out; /* SMOOTHER EASING */
+  }
+
+  /* Use a group-hover for the animation trigger */
+  .group:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    @apply absolute w-full h-full;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
 }
-
-
-
-
 
