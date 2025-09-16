@@ -49,6 +49,8 @@ module.exports = function (eleventyConfig) {
   // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
   eleventyConfig.addWatchTarget("./src/css/");
+   eleventyConfig.addPassthroughCopy("./src/js"); 
+
   eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addPassthroughCopy("./src/img/favicons");
   eleventyConfig.addPassthroughCopy({ "./src/robots.txt": "/robots.txt" });
