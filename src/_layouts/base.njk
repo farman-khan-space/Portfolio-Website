@@ -32,7 +32,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- OPTIMIZED FONT LOADING -->
+    <!-- This tells the browser to start fetching the font file ASAP without blocking the page rendering -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap">
+    <!-- This applies the stylesheet once it's loaded. The 'media' trick prevents it from blocking rendering initially. -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap" media="print" onload="this.media='all'">
+    <!-- Fallback for browsers that don't support JavaScript -->
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap">
+    </noscript>
+
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 
     <!-- ADD THE AOS CSS FILE HERE -->
