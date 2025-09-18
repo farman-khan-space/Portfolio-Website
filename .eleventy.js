@@ -8,17 +8,34 @@ const isProduction = process.env.NODE_ENV === 'production';
 const PATH_PREFIX = "/";
 
 async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
+  // Correctly resolve the path whether it's absolute or relative
   let srcPath = src.startsWith('/') ? `./src${src}` : src;
 
+  // --- OPTIMIZATION: Added 'avif' format and defined quality settings ---
   let metadata = await Image(srcPath, {
     widths: [400, 800, 1200],
-    formats: ["webp", "jpeg"],
+    // Add avif, the most modern and efficient format
+    formats: ["avif", "webp", "jpeg"],
     outputDir: "./_site/img/optimized/",
     urlPath: path.join(PATH_PREFIX, "/img/optimized/"),
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
       const name = path.basename(src, extension);
       return `${name}-${width}w.${format}`;
+    },
+    // --- OPTIMIZATION: Explicitly set compression quality ---
+    // This gives us more control over the final file size.
+    sharpOptions: {
+      jpeg: {
+        quality: 80,
+        progressive: true,
+      },
+      webp: {
+        quality: 80,
+      },
+      avif: {
+        quality: 75,
+      }
     }
   });
 
@@ -26,10 +43,11 @@ async function imageShortcode(src, alt, sizes = "100vw", classes = "") {
     alt,
     sizes,
     class: classes,
-    loading: "lazy",
-    decoding: "async",
+    loading: "lazy",  // This is already a huge performance win!
+    decoding: "async", // And so is this!
   };
 
+  // The generateHTML function returns a <picture> element with all the sources
   return Image.generateHTML(metadata, imageAttributes);
 }
 
@@ -38,7 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData("site", {
     title: "Farman Khan | Data Analyst Portfolio",
     description: "The data analysis and storytelling portfolio of Farman Khan, showcasing projects in SQL, Python, and Power BI.",
-    url: "https://datamakinsense.space",
+    url: "https://datamakinsense.space", // Make sure this is your final domain
     author: "Farman Khan"
   });
 
@@ -49,7 +67,7 @@ module.exports = function (eleventyConfig) {
   // --- PASSTHROUGHS & WATCH TARGETS ---
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
   eleventyConfig.addWatchTarget("./src/css/");
-   eleventyConfig.addPassthroughCopy("./src/js"); 
+  eleventyConfig.addPassthroughCopy("./src/js"); 
 
   eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addPassthroughCopy("./src/img/favicons");
@@ -65,7 +83,7 @@ module.exports = function (eleventyConfig) {
     return new URL(url, base).href;
   });
 
-  // --- NEW: READING TIME FILTER ---
+  // --- READING TIME FILTER ---
   eleventyConfig.addFilter("readingTime", (content) => {
     const textOnly = content.replace(/(<([^>]+)>)/gi, "");
     const readingSpeed = 238; // Average reading speed in words per minute
