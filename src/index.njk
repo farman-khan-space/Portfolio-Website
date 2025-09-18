@@ -34,19 +34,25 @@ permalink: /
             {# Loop to display the first 3 projects #}
             {% for project in collections.projects %}
             {% if loop.index0 < 3 %}
-            <div
-                data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
-                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-                <div class="overflow-hidden rounded">
-                    {% image project.data.featuredImage, project.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-52 object-cover" %}
+            <a href="{{ project.url | url }}" 
+               data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
+               class="group block card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
+                
+                <div class="relative overflow-hidden rounded">
+                    {% image project.data.featuredImage, project.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-60 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" %}
+                    
+                    <!-- Desktop-only hover overlay -->
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out hidden md:flex items-center justify-center p-6">
+                        <p class="text-white text-center font-semibold">View Project Details</p>
+                    </div>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h3 class="font-heading text-xl font-bold text-foreground mb-2">{{ project.data.title }}</h3>
-                    <p class="text-foreground-muted mb-4">{{ project.data.summary }}</p>
 
-                    {# This block checks if tags exist and then loops through them #}
+                <div class="p-6">
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{{ project.data.title }}</h3>
+                    <p class="text-foreground-muted text-base mb-4">{{ project.data.summary }}</p>
+                    
                     {% if project.data.tags %}
-                    <div class="my-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         {% for tag in project.data.tags %}
                         <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
                             {{ tag }}
@@ -55,12 +61,7 @@ permalink: /
                     </div>
                     {% endif %}
                 </div>
-                <div class="p-6 pt-0">
-                    <a href="{{ project.url | url }}" class="font-medium text-primary hover:font-bold hover:underline">
-                        Project Details
-                    </a>
-                </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
@@ -85,20 +86,26 @@ permalink: /
             {# Loop to display the first 3 posts #}
             {% for post in collections.posts %}
             {% if loop.index0 < 3 %}
-            <div
-                data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
-                class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform flex flex-col">
-                <div class="overflow-hidden rounded">
-                    {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-52 object-cover" %}
+            <a href="{{ post.url | url }}" 
+               data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}"
+               class="group block card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
+                
+                <div class="relative overflow-hidden rounded">
+                    {% image post.data.featuredImage, post.data.title, "(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw", "w-full h-60 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" %}
+                    
+                    <!-- Desktop-only hover overlay -->
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out hidden md:flex items-center justify-center p-6">
+                        <p class="text-white text-center font-semibold">Read Article</p>
+                    </div>
                 </div>
-                <div class="p-6 flex-grow">
-                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date | readableDate }} • {{ post.data.readTime }}</p>
-                    <h3 class="font-heading text-xl font-bold text-foreground mb-3">{{ post.data.title }}</h3>
-                    <p class="text-foreground-muted mb-6">{{ post.data.summary }}</p>
 
-                    {# This block checks if tags exist and then loops through them #}
+                <div class="p-6">
+                    <p class="text-sm text-foreground-muted mb-2">{{ post.data.date | readableDate }} • {{ post.data.readTime }}</p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{{ post.data.title }}</h3>
+                    <p class="text-foreground-muted text-base mb-4">{{ post.data.summary }}</p>
+                    
                     {% if post.data.tags %}
-                    <div class="my-4 flex flex-wrap gap-2">
+                    <div class="mt-4 flex flex-wrap gap-2">
                         {% for tag in post.data.tags %}
                         <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
                             {{ tag }}
@@ -107,10 +114,7 @@ permalink: /
                     </div>
                     {% endif %}
                 </div>
-                <a href="{{ post.url | url }}" class="font-medium text-primary hover:font-bold hover:underline self-start px-6 pb-6">
-                    Read Article
-                </a>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
