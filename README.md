@@ -86,6 +86,8 @@ cd portfolio-website
 ### Installation
 Install the dependencies using npm:
 
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+
 **npm install**
 
 ### Running Locally
@@ -111,7 +113,9 @@ You can deploy this website to any static hosting service. Here are instructions
 
 To deploy to GitHub Pages, you can use the `deploy.yaml` workflow provided in the `_templates/.github/workflows/` directory. You will need to configure your repository to use GitHub Actions for deployment.
 
-### Netlify
+### Netlify  
+
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 You can also deploy to Netlify. The `netlify.toml` file in the root directory is already configured for deployment.
 
