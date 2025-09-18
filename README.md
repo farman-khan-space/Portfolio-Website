@@ -1,4 +1,8 @@
 # Portfolio Website
+[![License: MIT](https://img.shields.io/badge/license-MIT-dc2626?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+![Version](https://img.shields.io/badge/version-1.0.0-f5f5f4?style=for-the-badge&labelColor=333333)
+
 
 This is a personal portfolio website built with Eleventy and Tailwind CSS. It's designed to be a modern, responsive, and customizable showcase of your work, blog, and personal brand.
 
