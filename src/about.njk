@@ -12,66 +12,66 @@ permalink: /about/
     </div>
 </section>
 
-{# --- Main Content Section with Image & Intro --- #}
+{# --- Main Content Section --- #}
 <section class="bg-background py-20 lg:py-24">
     <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto items-center">
-            
-            <!-- Your Profile Picture -->
-            <div class="lg:col-span-1" data-aos="fade-in">
-                {# Replace this with your stylized B&W photo with a reddish gradient bg #}
-                <img src="https://placehold.co/500x500/0C0A09/DC2626?text=Farman&font=poppins" alt="Farman Khan" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
-            </div>
+        
+        <div class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-center p-6 md:p-12">
+                
+                <div class="lg:col-span-1" data-aos="fade-in">
+                    <!-- FIXED: The image path now correctly points to naruto.jpg -->
+                    {% image "src/img/naruto.jpg", "A portrait photo of Farman Khan", "(min-width: 1024px) 30vw, 100vw", "rounded-lg shadow-xl w-full max-w-sm mx-auto" %}
+                </div>
 
-            <!-- Introduction Text -->
-            <div class="lg:col-span-2" data-aos="fade-in" data-aos-delay="200">
-                <h2 class="font-heading text-3xl font-bold text-foreground mb-4">My Mission is to Make Data Speak.</h2>
-                <div class="space-y-4 text-lg text-foreground-muted">
-                    <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within complex datasets. My journey into the world of data began with a deep-seated curiosity for patterns and a drive to solve meaningful problems.</p>
-                    <p>I believe that raw data is like an unwritten story, full of potential but silent. My role is to be the translator—to turn that noise into a clear signal, crafting compelling visualizations and reports that are not only insightful but also accessible to any audience, from the technical expert to the boardroom executive.</p>
+                <!-- Introduction Text -->
+                <div class="lg:col-span-2" data-aos="fade-in" data-aos-delay="200">
+                    <h2 class="font-heading text-3xl font-bold text-foreground mb-4">My Mission is to Make Data Speak.</h2>
+                    <div class="space-y-4 text-lg text-foreground-muted">
+                        <p>Hello! I'm Farman Khan, a passionate data analyst dedicated to uncovering the narratives hidden within complex datasets. My journey into the world of data began with a deep-seated curiosity for patterns and a drive to solve meaningful problems.</p>
+                        <p>I believe that raw data is like an unwritten story, full of potential but silent. My role is to be the translator—to turn that noise into a clear signal, crafting compelling visualizations and reports that are not only insightful but also accessible to any audience.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-{# --- My Journey & Philosophy Section --- #}
+{# --- My Approach Section --- #}
 <section class="bg-accent py-20 lg:py-24">
     <div class="container mx-auto px-6 max-w-4xl">
         <div class="text-center" data-aos="fade-up">
              <h2 class="font-heading text-3xl font-bold text-foreground mb-12">My Approach</h2>
         </div>
         
-        <!-- Timeline-style layout -->
         <div class="space-y-12">
-            <!-- Step 1: Curiosity -->
-            <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-up" data-aos-delay="100">
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">01</div>
                 <div>
                     <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Start with 'Why'</h3>
                     <p class="text-lg text-foreground-muted">Every great analysis begins not with data, but with a question. I focus on understanding the core business problem first to ensure my work is always relevant and impactful.</p>
                 </div>
             </div>
-            <!-- Step 2: Process -->
-            <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-up" data-aos-delay="200">
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">02</div>
                 <div>
                     <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Craft the Narrative</h3>
                     <p class="text-lg text-foreground-muted">Data cleaning, processing, and statistical analysis are the grammar of my work. I meticulously prepare the data to build a story that is both accurate and trustworthy.</p>
                 </div>
             </div>
-            <!-- Step 3: Impact -->
-            <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-up" data-aos-delay="300">
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up" data-aos-delay="300">
                 <div class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20 text-primary font-heading text-2xl font-bold">03</div>
                 <div>
                     <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Deliver with Clarity</h3>
-                    <p class="text-lg text-foreground-muted">The final step is visualization. I use tools like Power BI and Tableau to create interactive dashboards and clear reports that empower stakeholders to see the full picture and act with confidence.</p>
+                    <p class="text-lg text-foreground-muted">The final step is visualization. I use tools like Power BI to create interactive dashboards and clear reports that empower stakeholders to see the full picture and act with confidence.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 {# --- Skills & Tools Section --- #}
 <section class="bg-background py-20 lg:py-24">
@@ -104,3 +104,4 @@ permalink: /about/
         </div>
     </div>
 </section>
+
