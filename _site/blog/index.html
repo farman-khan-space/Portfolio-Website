@@ -55,7 +55,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- OPTIMIZED FONT LOADING -->
+    <!-- This tells the browser to start fetching the font file ASAP without blocking the page rendering -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap">
+    <!-- This applies the stylesheet once it's loaded. The 'media' trick prevents it from blocking rendering initially. -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap" media="print" onload="this.media='all'">
+    <!-- Fallback for browsers that don't support JavaScript -->
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;700&family=Lexend:wght@700&display=swap">
+    </noscript>
+
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- ADD THE AOS CSS FILE HERE -->
@@ -191,7 +201,7 @@
 
     <main id="main-content" class="pt-20">
         
-<section class="text-center py-24 lg:py-32 px-6 bg-accent   border-b border-primary/10">
+<section class="text-center py-24 lg:py-32 px-6 bg-accent border-b border-primary/10">
     <div class="container mx-auto" data-aos="fade-in">
         <h1 class="font-heading text-4xl md:text-6xl font-bold text-foreground tracking-tight">Data & Insights</h1>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-foreground-muted">Writing about data analysis, visualization techniques, and the stories hidden within the numbers.</p>
@@ -203,56 +213,48 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
             
-            <div class="flip-card group" data-aos="fade-up" data-aos-delay="0">
-                <div class="flip-card-inner">
-                    <!-- FRONT OF CARD -->
-                    <div class="flip-card-front">
-                         <div class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 h-full">
-                            <div class="overflow-hidden rounded h-full">
-                                <picture><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-full object-cover" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="400" height="533"></picture>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- BACK OF CARD -->
-                    <div class="flip-card-back">
-                        <div class="card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 h-full flex flex-col">
-                            <div class="p-6 flex-grow flex flex-col justify-center">
-                                <p class="text-sm text-foreground-muted mb-2">August 30, 2025 • </p>
-                                <h3 class="font-heading text-xl font-bold text-foreground mb-3">Market Trend Analysis</h3>
-                                <p class="text-foreground-muted mb-6">Analyzed sales data to identify key market trends and provide actionable growth strategies</p>
-
-                                
-                                <div class="my-4 flex flex-wrap gap-2 justify-center">
-                                    
-                                    <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
-                                        SQL
-                                    </span>
-                                    
-                                    <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
-                                        Python
-                                    </span>
-                                    
-                                    <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
-                                        Power BI
-                                    </span>
-                                    
-                                </div>
-                                
-                            </div>
-                            <a href="/posts/my-first-post/"
-                                class="font-medium text-primary hover:font-bold hover:underline self-center px-6 pb-6">
-                                Read Article
-                            </a>
-                        </div>
+            <a href="/posts/my-first-post/" 
+               data-aos="fade-up" data-aos-delay="0"
+               class="group block card-glass bg-noise backdrop-blur-lg p-2 rounded-lg shadow-lg border border-white/10 dark:border-white/10 hover:shadow-xl hover:scale-[1.02] transition-[transform,box-shadow] duration-300 will-change-transform">
+                
+                <div class="relative overflow-hidden rounded">
+                    <picture><source type="image/avif" srcset="/img/optimized/article-1-card-400w.avif 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><source type="image/webp" srcset="/img/optimized/article-1-card-400w.webp 400w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"><img alt="Market Trend Analysis" class="w-full h-60 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" src="/img/optimized/article-1-card-400w.jpeg" width="400" height="533"></picture>
+                    
+                    <!-- Desktop-only hover overlay -->
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out hidden md:flex items-center justify-center p-6">
+                        <p class="text-white text-center font-semibold">Read Article</p>
                     </div>
                 </div>
-            </div>
+
+                <div class="p-6">
+                    <p class="text-sm text-foreground-muted mb-2">August 30, 2025 • </p>
+                    <h3 class="font-heading text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Market Trend Analysis</h3>
+                    <p class="text-foreground-muted text-base mb-4">Analyzed sales data to identify key market trends and provide actionable growth strategies</p>
+                    
+                    
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            SQL
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Python
+                        </span>
+                        
+                        <span class="text-xs text-foreground-muted border border-foreground-muted/25 rounded-full px-3 py-1">
+                            Power BI
+                        </span>
+                        
+                    </div>
+                    
+                </div>
+            </a>
             
 
         </div>
     </div>
 </section>
-
 
     </main>
 
